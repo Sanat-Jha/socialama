@@ -34,14 +34,13 @@
     </script>
     <style>
         .gradient-text {
-            background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
         .hero-bg {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background-color: #1E1E1E;
         }
         
         .contact-bg {
@@ -93,6 +92,114 @@
             background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
             box-shadow: 0 10px 30px rgba(168, 230, 207, 0.3);
         }
+/* Import funky font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap');
+
+.funky-font {
+    font-family: 'Bebas Neue', 'Oswald', sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.hero-bg {
+    background-color: #1E1E1E;;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .funky-font {
+        font-size: 3rem !important;
+    }
+    
+    /* Scale down the photo grid on mobile */
+    .hero-bg > div > div:first-child {
+        width: 400px !important;
+        height: 280px !important;
+    }
+    
+    /* Reduce image sizes on mobile while maintaining aspect ratios */
+    .hero-bg > div > div:first-child > div {
+        transform: scale(0.7) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce on very small screens */
+    .hero-bg > div > div:first-child {
+        width: 320px !important;
+        height: 220px !important;
+    }
+    
+    .hero-bg > div > div:first-child > div {
+        transform: scale(0.5) !important;
+    }
+}
+/* Import thin fonts similar to the image */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Helvetica+Neue:wght@100;200;300;400&display=swap');
+
+/* Who Are We Section Styling */
+.who-are-we-section {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    background-color: rgba(30, 30, 30, 1);
+}
+
+.who-are-we-section h2 {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 100; /* Ultra thin */
+    letter-spacing: 0.15em;
+    line-height: 1.1;
+}
+
+.who-are-we-section h3 {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 200; /* Extra light */
+    letter-spacing: 0.08em;
+    line-height: 1.3;
+}
+
+.who-are-we-section p {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 300; /* Light */
+    letter-spacing: 0.02em;
+    line-height: 1.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .who-are-we-section h2 {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 2rem;
+    }
+    
+    .who-are-we-section h3 {
+        font-size: 1.25rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.4;
+    }
+    
+    .who-are-we-section p {
+        font-size: 0.875rem;
+        line-height: 1.6;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .who-are-we-section h2 {
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+    }
+    
+    .who-are-we-section h3 {
+        font-size: 1.125rem;
+    }
+    
+    .who-are-we-section p {
+        font-size: 0.8rem;
+    }
+}
+
+
     </style>
 </head>
 <body class="font-inter bg-dark-bg text-white leading-relaxed">
@@ -102,34 +209,67 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="min-h-screen relative flex items-center justify-center overflow-hidden hero-bg">
-        <div class="relative w-full h-screen flex items-center justify-center">
-            <!-- Background Images Grid -->
-            <div class="absolute top-0 left-0 w-full h-full grid grid-cols-3 grid-rows-2 gap-5 pt-24 pb-24 px-15 opacity-30">
-                <div class="bg-gray-700 rounded-xl bg-cover bg-center filter grayscale transition-all duration-300"></div>
-                <div class="bg-gray-600 rounded-xl bg-cover bg-center filter grayscale transition-all duration-300"></div>
-                <div class="bg-gray-500 rounded-xl bg-cover bg-center filter grayscale transition-all duration-300"></div>
-                <div class="col-span-2 bg-gray-400 rounded-xl bg-cover bg-center filter grayscale transition-all duration-300"></div>
-                <div class="bg-gray-300 rounded-xl bg-cover bg-center filter grayscale transition-all duration-300"></div>
-            </div>
+<section class="min-h-screen relative flex items-center justify-center overflow-hidden hero-bg">
+    <div class="relative w-full h-screen flex items-center justify-center">
+        <!-- Background Images Grid - 3x2 layout with overlapping -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-30">
             
-            <div class="relative z-10 text-center max-w-4xl px-5">
-                <h1 class="text-6xl md:text-8xl font-bold tracking-widest-8 mb-5 gradient-text drop-shadow-lg">SOCIALAMA</h1>
-                <p class="text-lg md:text-2xl font-light text-gray-300 tracking-widest-2 mb-10">We don't chase trends we create them</p>
-            </div>
+            <!-- TOP ROW (3 images) -->
+            <!-- 1. Left: Blonde woman (portrait style) -->
+            <div class="absolute top-0 left-0 w-44 h-56 bg-cover bg-center transform rotate-2 shadow-lg filter grayscale z-10" 
+                 style="background-image: url('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+            
+            <!-- 2. Center: Black man with chain/necklace (portrait) -->
+            <div class="absolute top-8 left-40 w-48 h-52 bg-cover bg-center transform -rotate-1 shadow-lg filter grayscale z-20" 
+                 style="background-image: url('https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+            
+            <!-- 3. Right: Woman in off-shoulder dress (glamour shot) -->
+            <div class="absolute top-4 right-0 w-46 h-58 bg-cover bg-center transform rotate-3 shadow-lg filter grayscale z-15" 
+                 style="background-image: url('https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+            
+            <!-- BOTTOM ROW (3 images) -->
+            <!-- 4. Left: Hands holding dumbbells (fitness/workout) -->
+            <div class="absolute bottom-0 left-50 w-52 h-36 bg-cover bg-center transform -rotate-2 shadow-lg filter grayscale z-25" 
+                 style="background-image: url('https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+            
+            <!-- 5. Center: Man in hat and suit (vintage/classic style) -->
+            <div class="absolute bottom-8 left-44 w-42 h-54 bg-cover bg-center transform rotate-1 shadow-lg filter grayscale z-30" 
+                 style="background-image: url('https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+            
+            <!-- 6. Right: Woman with glasses (close-up portrait) -->
+            <div class="absolute bottom-4 right-12 w-48 h-44 bg-cover bg-center transform -rotate-3 shadow-lg filter grayscale z-35" 
+                 style="background-image: url('https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+            
         </div>
-    </section>
+        
+        <div class="relative z-40 text-center max-w-4xl px-5">
+            <h1 class="funky-font text-6xl md:text-8xl font-bold tracking-widest mb-5 text-white drop-shadow-lg">SOCIALAMA</h1>
+            <p class="text-lg md:text-2xl font-light text-gray-300 tracking-wider mb-10">We don't chase trends we create them</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Who Are We Section -->
-    <section class="py-32 bg-dark-bg">
-        <div class="max-w-6xl mx-auto px-10">
-            <h2 class="text-4xl md:text-6xl font-light text-white mb-8 tracking-widest-3 text-center">Who Are We?</h2>
-            <h3 class="text-xl md:text-3xl font-medium text-white mb-10 tracking-wider text-center">We're Not Just a Team. We're a Content Culture.</h3>
-            <p class="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed font-light text-center">
-                Socialama is a new gen content agency built by creators. We specialize in crafting scroll-stopping content that's not just viral — it's valuable. Our aim is to transform your online presence into a powerful brand asset from zero to hero we build personal brands that actually connect.
+<!-- Who Are We Section -->
+<section class="min-h-screen flex items-center justify-center px-8" style="background-color: #1E1E1E;">
+    <div class="max-w-5xl mx-auto text-center">
+        <!-- Main Heading -->
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-thin tracking-widest mb-12 text-white leading-tight">
+            Who Are We?
+        </h2>
+        
+        <!-- Subheading -->
+        <h3 class="text-xl md:text-2xl lg:text-3xl font-light mb-16 text-white tracking-wide">
+            We're Not Just a Team. We're a Content Culture.
+        </h3>
+        
+        <!-- Body Text -->
+        <div class="max-w-4xl mx-auto">
+            <p class="text-sm md:text-base lg:text-lg font-light leading-relaxed text-gray-300 tracking-wide">
+                Socialama is a new-gen content agency built by creators. We specialize in crafting scroll-stopping content that's not just viral — it's valuable. Our aim is to transform your online presence into a powerful brand asset. From zero to hero, we build personal brands that actually connect.
             </p>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Quality Assurance Section -->
     <section class="py-32 bg-dark-bg relative">
