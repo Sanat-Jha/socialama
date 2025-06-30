@@ -1,465 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Socialama - Complete Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Socialama - Final Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        'dark-bg': '#1a1a1a',
-                        'dark-secondary': '#2d2d2d',
-                        'dark-card': 'rgba(255, 255, 255, 0.03)',
-                        'dark-border': 'rgba(255, 255, 255, 0.1)',
-                    },
-                    backdropBlur: {
-                        '10': '10px',
-                    },
-                    letterSpacing: {
-                        'widest-2': '2px',
-                        'widest-3': '3px',
-                        'widest-8': '8px',
-                    }
-                }
-            }
-        }
-    </script>
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+        }
+        .hero-bg {
+            background-color: #1E1E1E;
+        }
+        .font-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        
+        /* Updated collage positioning to match bg-image.jpg exactly */
+        .logo-collage-wrapper {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .collage-img {
+            position: absolute;
+            object-fit: cover;
+            border-radius: 15px;
+            opacity: 0.88;
+            filter: grayscale(0.1) brightness(0.9) contrast(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+        
+        /* Exact positioning based on bg-image.jpg reference */
+        .img1 { 
+            left: 20px; top: 20px; 
+            width: 140px; height: 120px; 
+            z-index: 2;
+            transform: rotate(-8deg);
+        }
+        .img2 { 
+            left: 180px; top: -10px; 
+            width: 160px; height: 130px; 
+            z-index: 3;
+            transform: rotate(12deg);
+        }
+        .img3 { 
+            left: 380px; top: 30px; 
+            width: 150px; height: 110px; 
+            z-index: 1;
+            transform: rotate(-5deg);
+        }
+        .img4 { 
+            left: 0px; top: 180px; 
+            width: 130px; height: 140px; 
+            z-index: 4;
+            transform: rotate(6deg);
+        }
+        .img5 { 
+            left: 200px; top: 160px; 
+            width: 140px; height: 120px; 
+            z-index: 5;
+            transform: rotate(-12deg);
+        }
+        .img6 { 
+            left: 400px; top: 170px; 
+            width: 120px; height: 130px; 
+            z-index: 2;
+            transform: rotate(10deg);
+        }
+        .img7 { 
+            left: 150px; top: 290px; 
+            width: 200px; height: 90px; 
+            z-index: 1;
+            transform: rotate(-3deg);
+        }
+        
+        .main-logo {
+            position: absolute;
+            left: 50%; top: 45%;
+            transform: translate(-50%, -50%);
+            width: 380px;
+            z-index: 10;
+            filter: drop-shadow(0 4px 24px rgba(0,0,0,0.3));
+            pointer-events: none;
+        }
+        .logo-collage-caption {
+            position: absolute;
+            left: 50%;
+            top: 85%;
+            transform: translate(-50%, 0);
+            color: #d3d3d3;
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            z-index: 20;
+            text-align: center;
+            width: 100%;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        
+        /* Quality Section Background */
+        .new-quality-section {
+            background-image: url('https://pplx-res.cloudinary.com/image/upload/v1751122706/gpt4o_images/xlhzpxhslh7pxqkpiuoi.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            min-height: 100vh;
+        }
+        .new-quality-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0.2) 0%, 
+                rgba(0, 0, 0, 0.1) 30%, 
+                rgba(0, 0, 0, 0.3) 70%, 
+                rgba(26, 26, 26, 0.8) 100%
+            );
+            z-index: 1;
+        }
+        .new-quality-section > div {
+            position: relative;
+            z-index: 2;
+        }
+        .quality-text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
         .gradient-text {
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
-        .hero-bg {
-            background-color: #1E1E1E;
-        }
-        
-        .contact-bg {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-        }
-        
-        .contact-overlay {
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.05) 0%, transparent 50%);
-        }
-        
         .instagram-gradient {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
         }
-        
         .youtube-gradient {
             background: linear-gradient(135deg, #ff0000, #cc0000);
         }
-        
         .multi-platform-gradient {
             background: linear-gradient(135deg, #4267B2, #1DA1F2, #0077B5, #25D366);
         }
-        
         .design-gradient {
             background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
         }
-        
         .content-gradient {
             background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
         }
-        
         .consultation-gradient {
             background: linear-gradient(135deg, #ffd93d, #ff6b6b);
         }
-        
-        .stat-red {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+
+        @media (max-width: 768px) {
+            .logo-collage-wrapper { 
+                width: 90vw; 
+                height: 60vw; 
+                min-width: 280px; 
+                min-height: 220px; 
+            }
+            .collage-img { 
+                width: 18vw !important; 
+                height: 15vw !important;
+                min-width: 60px;
+                min-height: 50px;
+            }
+            .main-logo { 
+                width: 50vw !important;
+                min-width: 200px;
+            }
+            .logo-collage-caption { 
+                font-size: 1rem; 
+                top: 88%;
+            }
         }
-        
-        .stat-blue {
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
-            box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
-        }
-        
-        .stat-green {
-            background: linear-gradient(135deg, #a8e6cf, #7fcdcd);
-            box-shadow: 0 10px 30px rgba(168, 230, 207, 0.3);
-        }
-/* Import funky font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;700&display=swap');
-
-.funky-font {
-    font-family: 'Bebas Neue', 'Oswald', sans-serif;
-    letter-spacing: 0.1em;
-}
-
-.hero-bg {
-    background-color: #1E1E1E;;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .funky-font {
-        font-size: 3rem !important;
-    }
-    
-    /* Scale down the photo grid on mobile */
-    .hero-bg > div > div:first-child {
-        width: 400px !important;
-        height: 280px !important;
-    }
-    
-    /* Reduce image sizes on mobile while maintaining aspect ratios */
-    .hero-bg > div > div:first-child > div {
-        transform: scale(0.7) !important;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Further reduce on very small screens */
-    .hero-bg > div > div:first-child {
-        width: 320px !important;
-        height: 220px !important;
-    }
-    
-    .hero-bg > div > div:first-child > div {
-        transform: scale(0.5) !important;
-    }
-}
-/* Import thin fonts similar to the image */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Helvetica+Neue:wght@100;200;300;400&display=swap');
-
-/* Who Are We Section Styling */
-.who-are-we-section {
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    background-color: rgba(30, 30, 30, 1);
-}
-
-.who-are-we-section h2 {
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 100; /* Ultra thin */
-    letter-spacing: 0.15em;
-    line-height: 1.1;
-}
-
-.who-are-we-section h3 {
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 200; /* Extra light */
-    letter-spacing: 0.08em;
-    line-height: 1.3;
-}
-
-.who-are-we-section p {
-    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-    font-weight: 300; /* Light */
-    letter-spacing: 0.02em;
-    line-height: 1.7;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .who-are-we-section h2 {
-        font-size: 2.5rem;
-        letter-spacing: 0.1em;
-        margin-bottom: 2rem;
-    }
-    
-    .who-are-we-section h3 {
-        font-size: 1.25rem;
-        margin-bottom: 2.5rem;
-        line-height: 1.4;
-    }
-    
-    .who-are-we-section p {
-        font-size: 0.875rem;
-        line-height: 1.6;
-        padding: 0 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .who-are-we-section h2 {
-        font-size: 2rem;
-        letter-spacing: 0.08em;
-    }
-    
-    .who-are-we-section h3 {
-        font-size: 1.125rem;
-    }
-    
-    .who-are-we-section p {
-        font-size: 0.8rem;
-    }
-}
-
-
     </style>
 </head>
-<body class="font-inter bg-dark-bg text-white leading-relaxed">
+<body class="bg-dark-bg text-white leading-relaxed">
     <!-- Header Section -->
-    <header class="fixed top-0 left-0 w-full px-10 py-5 z-50 bg-dark-bg bg-opacity-90 backdrop-blur-10">
-        <div class="text-lg font-semibold tracking-widest-2 text-white">SOCIALAMA</div>
+    <header class="fixed top-0 left-0 w-full px-10 py-5 z-50 bg-[#1a1a1a] bg-opacity-90 backdrop-blur-sm">
+        <div>
+            <img src="images/socialama-logo1.jpg" alt="Socialama Logo" style="height:40px; width:auto;" />
+        </div>
     </header>
 
-    <!-- Hero Section -->
-<section class="min-h-screen relative flex items-center justify-center overflow-hidden hero-bg">
-    <div class="relative w-full h-screen flex items-center justify-center">
-        <!-- Background Images Grid - 3x2 layout with overlapping -->
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-30">
-            
-            <!-- TOP ROW (3 images) -->
-            <!-- 1. Left: Blonde woman (portrait style) -->
-            <div class="absolute top-0 left-0 w-44 h-56 bg-cover bg-center transform rotate-2 shadow-lg filter grayscale z-10" 
-                 style="background-image: url('https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
-            
-            <!-- 2. Center: Black man with chain/necklace (portrait) -->
-            <div class="absolute top-8 left-40 w-48 h-52 bg-cover bg-center transform -rotate-1 shadow-lg filter grayscale z-20" 
-                 style="background-image: url('https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
-            
-            <!-- 3. Right: Woman in off-shoulder dress (glamour shot) -->
-            <div class="absolute top-4 right-0 w-46 h-58 bg-cover bg-center transform rotate-3 shadow-lg filter grayscale z-15" 
-                 style="background-image: url('https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
-            
-            <!-- BOTTOM ROW (3 images) -->
-            <!-- 4. Left: Hands holding dumbbells (fitness/workout) -->
-            <div class="absolute bottom-0 left-50 w-52 h-36 bg-cover bg-center transform -rotate-2 shadow-lg filter grayscale z-25" 
-                 style="background-image: url('https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
-            
-            <!-- 5. Center: Man in hat and suit (vintage/classic style) -->
-            <div class="absolute bottom-8 left-44 w-42 h-54 bg-cover bg-center transform rotate-1 shadow-lg filter grayscale z-30" 
-                 style="background-image: url('https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
-            
-            <!-- 6. Right: Woman with glasses (close-up portrait) -->
-            <div class="absolute bottom-4 right-12 w-48 h-44 bg-cover bg-center transform -rotate-3 shadow-lg filter grayscale z-35" 
-                 style="background-image: url('https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
-            
+    <!-- Hero Section with 7-image collage background -->
+    <section class="min-h-screen relative flex items-center justify-center overflow-hidden hero-bg">
+        <div class="relative w-full h-screen flex items-center justify-center">
+            <div class="logo-collage-wrapper">
+                <img src="images/1.jpg" class="collage-img img1" alt="" />
+                <img src="images/2.jpg" class="collage-img img2" alt="" />
+                <img src="images/3.jpg" class="collage-img img3" alt="" />
+                <img src="images/4.jpg" class="collage-img img4" alt="" />
+                <img src="images/5.jpg" class="collage-img img5" alt="" />
+                <img src="images/6.jpg" class="collage-img img6" alt="" />
+                <img src="images/7.jpg" class="collage-img img7" alt="" />
+                <img src="images/socialama-logo1.jpg" class="main-logo" alt="SOCiALAMA Logo" />
+                <div class="logo-collage-caption">
+                    We don't chase trends we create them
+                </div>
+            </div>
         </div>
-        
-        <div class="relative z-40 text-center max-w-4xl px-5">
-            <h1 class="funky-font text-6xl md:text-8xl font-bold tracking-widest mb-5 text-white drop-shadow-lg">SOCIALAMA</h1>
-            <p class="text-lg md:text-2xl font-light text-gray-300 tracking-wider mb-10">We don't chase trends we create them</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- Who Are We Section -->
-<section class="min-h-screen flex items-center justify-center px-8" style="background-color: #1E1E1E;">
-    <div class="max-w-5xl mx-auto text-center">
-        <!-- Main Heading -->
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-thin tracking-widest mb-12 text-white leading-tight">
-            Who Are We?
-        </h2>
-        
-        <!-- Subheading -->
-        <h3 class="text-xl md:text-2xl lg:text-3xl font-light mb-16 text-white tracking-wide">
-            We're Not Just a Team. We're a Content Culture.
-        </h3>
-        
-        <!-- Body Text -->
-        <div class="max-w-4xl mx-auto">
-            <p class="text-sm md:text-base lg:text-lg font-light leading-relaxed text-gray-300 tracking-wide">
-                Socialama is a new-gen content agency built by creators. We specialize in crafting scroll-stopping content that's not just viral — it's valuable. Our aim is to transform your online presence into a powerful brand asset. From zero to hero, we build personal brands that actually connect.
-            </p>
+    <!-- Who Are We Section -->
+    <section class="min-h-screen flex items-center justify-center px-8 bg-[#1E1E1E]">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-thin tracking-[0.15em] mb-12 text-white leading-tight">Who Are We?</h2>
+            <h3 class="text-xl md:text-3xl font-light mb-16 text-white tracking-[0.08em]">We're Not Just a Team. We're a Content Culture.</h3>
+            <div class="max-w-4xl mx-auto">
+                <p class="text-lg font-light leading-relaxed text-gray-300 tracking-[0.02em]">Socialama is a new-gen content agency built by creators. We specialize in crafting scroll-stopping content that's not just viral — it's valuable. Our aim is to transform your online presence into a powerful brand asset. From zero to hero, we build personal brands that actually connect.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Quality Assurance Section -->
-    <section class="py-32 bg-dark-bg relative">
-        <div class="max-w-6xl mx-auto px-10">
-            <div class="text-center max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-6xl font-light text-white mb-20 tracking-widest-3">We Ensure Quality</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-15 mt-20 px-5">
-                    <div class="flex flex-col items-center text-center p-10 bg-white bg-opacity-5 rounded-2xl border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20">
-                        <div class="mb-8">
-                            <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl mx-auto relative overflow-hidden stat-red">
-                                <span class="text-white text-2xl">👁</span>
-                            </div>
-                        </div>
-                        <div class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-widest-2">50M+</div>
-                        <div class="text-lg text-gray-300 font-normal tracking-wider">Views Generated</div>
-                    </div>
-                    
-                    <div class="flex flex-col items-center text-center p-10 bg-white bg-opacity-5 rounded-2xl border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20">
-                        <div class="mb-8">
-                            <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl mx-auto relative overflow-hidden stat-blue">
-                                <span class="text-white text-2xl">📊</span>
-                            </div>
-                        </div>
-                        <div class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-widest-2">1B+</div>
-                        <div class="text-lg text-gray-300 font-normal tracking-wider">Accounts Reached</div>
-                    </div>
-                    
-                    <div class="flex flex-col items-center text-center p-10 bg-white bg-opacity-5 rounded-2xl border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20">
-                        <div class="mb-8">
-                            <div class="w-20 h-20 rounded-full flex items-center justify-center text-3xl mx-auto relative overflow-hidden stat-green">
-                                <span class="text-white text-2xl">👥</span>
-                            </div>
-                        </div>
-                        <div class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-widest-2">1L+</div>
-                        <div class="text-lg text-gray-300 font-normal tracking-wider">Community Built</div>
-                    </div>
+    <section class="py-32 new-quality-section">
+        <div class="content-wrapper max-w-6xl mx-auto px-10 text-center">
+            <div>
+                <h3 class="text-3xl md:text-4xl font-light text-gray-200 tracking-wider quality-text-shadow">We Ensure</h3>
+                <h1 class="text-6xl md:text-8xl font-bold text-white tracking-widest leading-none mt-2 quality-text-shadow">Quality</h1>
+            </div>
+            <div class="mt-20 flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
+                <div class="text-center animate-fade-in-up">
+                    <p class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-red-500 to-red-300 gradient-text quality-text-shadow">50M+</p>
+                    <p class="mt-2 text-sm text-gray-200 tracking-wider quality-text-shadow">Views Generated</p>
+                </div>
+                <div class="text-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <p class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-red-500 to-red-300 gradient-text quality-text-shadow">1B+</p>
+                    <p class="mt-2 text-sm text-gray-200 tracking-wider quality-text-shadow">Account Reached</p>
+                </div>
+                <div class="text-center animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <p class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-red-500 to-red-300 gradient-text quality-text-shadow">1L+</p>
+                    <p class="mt-2 text-sm text-gray-200 tracking-wider quality-text-shadow">Community</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Services Section -->
-    <section class="py-32 bg-dark-bg relative">
+    <section class="py-32 bg-[#1a1a1a]">
         <div class="max-w-6xl mx-auto px-10">
-            <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-widest-3">Our Services</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-5">
-                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 relative overflow-hidden hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20 hover:shadow-2xl">
-                    <div class="mb-6">
-                        <div class="w-15 h-15 rounded-xl flex items-center justify-center text-2xl text-white relative overflow-hidden instagram-gradient">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-5 leading-tight">Conquer Insta with Viral Content!</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">
-                        We create scroll-stopping Instagram content that gets you noticed. From viral reels to engaging stories, we craft content that not only looks good but drives real engagement and converts viewers into loyal followers.
-                    </p>
+            <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-[0.1em]">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Cards -->
+                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
+                    <div class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white instagram-gradient"><i class="fab fa-instagram"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-5">Conquer Insta with Viral Content!</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">We create scroll-stopping Instagram content that gets you noticed. From viral reels to engaging stories, we craft content that not only looks good but drives real engagement and converts viewers into loyal followers.</p>
                 </div>
-
-                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 relative overflow-hidden hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20 hover:shadow-2xl">
-                    <div class="mb-6">
-                        <div class="w-15 h-15 rounded-xl flex items-center justify-center text-2xl text-white relative overflow-hidden youtube-gradient">
-                            <i class="fab fa-youtube"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-5 leading-tight">Rule YT with <span class="text-red-400 font-bold">Storytelling</span></h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">
-                        Let structured storytelling set you apart from the crowd. We create compelling, binge-worthy content that keeps viewers hooked from start to finish, driving subscriptions and long-term growth.
-                    </p>
+                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
+                    <div class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white youtube-gradient"><i class="fab fa-youtube"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-5">Rule YT with <span class="text-red-400 font-bold">Storytelling</span></h3>
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">Let structured storytelling set you apart from the crowd. We create compelling, binge-worthy content that keeps viewers hooked from start to finish, driving subscriptions and long-term growth.</p>
                 </div>
-
-                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 relative overflow-hidden hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20 hover:shadow-2xl">
-                    <div class="mb-6">
-                        <div class="w-15 h-15 rounded-xl flex items-center justify-center text-2xl text-white relative overflow-hidden multi-platform-gradient">
-                            <i class="fas fa-th"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-5 leading-tight">Ace Every platform with Multi-Platform</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">
-                        We help brands grow across Facebook, WhatsApp, LinkedIn, and Email to create brand awareness and drive conversions. Our multi-platform approach ensures your message reaches your audience where they are most active.
-                    </p>
+                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
+                    <div class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white multi-platform-gradient"><i class="fas fa-th"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-5">Ace Every platform with Multi-Platform</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">We help brands grow across Facebook, WhatsApp, LinkedIn, and Email to create brand awareness and drive conversions. Our multi-platform approach ensures your message reaches your audience where they are most active.</p>
                 </div>
-
-                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 relative overflow-hidden hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20 hover:shadow-2xl">
-                    <div class="mb-6">
-                        <div class="w-15 h-15 rounded-xl flex items-center justify-center text-2xl text-white relative overflow-hidden design-gradient">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-5 leading-tight">Design That Speaks Your Brand!</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">
-                        We design scroll-stopping visuals—from logos and graphics to complete brand identities. Our designs don't just look good, they communicate your brand story and values effectively.
-                    </p>
+                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
+                    <div class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white design-gradient"><i class="fas fa-palette"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-5">Design That Speaks Your Brand!</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">We design scroll-stopping visuals—from logos and graphics to complete brand identities. Our designs don't just look good, they communicate your brand story and values effectively.</p>
                 </div>
-
-                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 relative overflow-hidden hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20 hover:shadow-2xl">
-                    <div class="mb-6">
-                        <div class="w-15 h-15 rounded-xl flex items-center justify-center text-2xl text-white relative overflow-hidden content-gradient">
-                            <i class="fas fa-edit"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-5 leading-tight">Strategic Content Creation & Copywriting</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">
-                        We connect brands with modern audiences through compelling content that drives engagement and conversions. Our strategic approach ensures every piece of content serves a purpose in your marketing funnel.
-                    </p>
+                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
+                    <div class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white content-gradient"><i class="fas fa-edit"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-5">Strategic Content Creation & Copywriting</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">We connect brands with modern audiences through compelling content that drives engagement and conversions. Our strategic approach ensures every piece of content serves a purpose in your marketing funnel.</p>
                 </div>
-
-                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white border-opacity-10 transition-all duration-300 backdrop-blur-10 relative overflow-hidden hover:-translate-y-3 hover:bg-white hover:bg-opacity-10 hover:border-white hover:border-opacity-20 hover:shadow-2xl">
-                    <div class="mb-6">
-                        <div class="w-15 h-15 rounded-xl flex items-center justify-center text-2xl text-white relative overflow-hidden consultation-gradient">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-5 leading-tight">Consultation by Founders & Team</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">
-                        Get direct access to our founder and expert team for strategic consultations, campaign planning, and growth optimization. We provide custom solutions tailored to your specific business goals.
-                    </p>
+                <div class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
+                    <div class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white consultation-gradient"><i class="fas fa-comments"></i></div>
+                    <h3 class="text-xl font-semibold text-white mb-5">Consultation by Founders & Team</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">Get direct access to our founder and expert team for strategic consultations, campaign planning, and growth optimization. We provide custom solutions tailored to your specific business goals.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Making Your Life Easier Section -->
-    <section class="py-32 bg-dark-bg relative">
+    <section class="py-32 bg-[#1a1a1a]">
         <div class="max-w-6xl mx-auto px-10">
-            <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-widest-3">Making Your Life Easier</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-5">
+            <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-[0.1em]">Making Your Life Easier</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
-                    <div class="py-4 px-6 rounded-lg text-center mb-8 bg-red-600">
-                        <h3 class="text-white text-xl font-semibold m-0">Problems</h3>
-                    </div>
-                    <div class="flex flex-col gap-5">
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-red-600">✕</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Struggling to consistently create fresh content for your social media presence</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-red-600">✕</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Spending hours creating content without actually seeing results</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-red-600">✕</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Missing optimal posting times and losing potential reach</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-red-600">✕</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Difficulty tracking performance across multiple platforms</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-red-600">✕</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Overwhelmed by constantly changing algorithm updates</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-red-600">✕</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Lack of professional design and branding consistency</span>
-                        </div>
+                    <div class="py-4 px-6 rounded-lg text-center mb-8 bg-red-600"><h3 class="text-white text-xl font-semibold">Problems</h3></div>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-red-500">✕</span><span class="text-gray-300 text-sm leading-relaxed">Struggling to consistently create fresh content for your social media presence</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-red-500">✕</span><span class="text-gray-300 text-sm leading-relaxed">Spending hours creating content without actually seeing results</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-red-500">✕</span><span class="text-gray-300 text-sm leading-relaxed">Missing optimal posting times and losing potential reach</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-red-500">✕</span><span class="text-gray-300 text-sm leading-relaxed">Difficulty tracking performance across multiple platforms</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-red-500">✕</span><span class="text-gray-300 text-gray-300 text-sm leading-relaxed">Overwhelmed by constantly changing algorithm updates</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-red-500">✕</span><span class="text-gray-300 text-sm leading-relaxed">Lack of professional design and branding consistency</span></div>
                     </div>
                 </div>
-
                 <div>
-                    <div class="py-4 px-6 rounded-lg text-center mb-8 bg-green-600">
-                        <h3 class="text-white text-xl font-semibold m-0">Solutions</h3>
-                    </div>
-                    <div class="flex flex-col gap-5">
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-green-600">✓</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Automated posting schedules across all platforms</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-green-600">✓</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">AI-powered content calendar and optimization</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-green-600">✓</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Visual analytics and post-engagement tracking</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-green-600">✓</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Centralized management for all social platforms</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-green-600">✓</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Comprehensive dashboard with unified analytics</span>
-                        </div>
-                        <div class="flex items-start gap-4 p-5 bg-white bg-opacity-5 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-10 hover:translate-x-1">
-                            <span class="text-xl font-bold min-w-5 mt-1 text-green-600">✓</span>
-                            <span class="text-gray-300 text-sm leading-relaxed">Professional templates and brand consistency</span>
-                        </div>
+                    <div class="py-4 px-6 rounded-lg text-center mb-8 bg-green-600"><h3 class="text-white text-xl font-semibold">Solutions</h3></div>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-green-500">✓</span><span class="text-gray-300 text-sm leading-relaxed">Automated posting schedules across all platforms</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-green-500">✓</span><span class="text-gray-300 text-sm leading-relaxed">AI-powered content calendar and optimization</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-green-500">✓</span><span class="text-gray-300 text-sm leading-relaxed">Visual analytics and post-engagement tracking</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-green-500">✓</span><span class="text-gray-300 text-sm leading-relaxed">Centralized management for all social platforms</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-green-500">✓</span><span class="text-gray-300 text-sm leading-relaxed">Comprehensive dashboard with unified analytics</span></div>
+                        <div class="flex items-start gap-4 p-5 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:translate-x-1 transition-all"><span class="text-xl font-bold mt-1 text-green-500">✓</span><span class="text-gray-300 text-sm leading-relaxed">Professional templates and brand consistency</span></div>
                     </div>
                 </div>
             </div>
@@ -467,74 +314,39 @@
     </section>
 
     <!-- Our Work Section -->
-    <section class="py-32 bg-dark-bg">
+    <section class="py-32 bg-[#1a1a1a]">
         <div class="max-w-6xl mx-auto px-10">
-            <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-widest-3">Our Work</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-15 max-w-6xl mx-auto px-5">
+            <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-[0.1em]">Our Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="rounded-xl p-8 text-white bg-gray-900 border border-gray-700">
                     <h3 class="text-3xl text-white text-center mb-8 font-normal tracking-wider">YouTube</h3>
-                    <div class="w-full">
-                        <div class="flex flex-col md:flex-row gap-5 items-start md:items-center">
-                            <div class="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 bg-gray-700">
-                                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f0f0f0'/><circle cx='50' cy='35' r='15' fill='%23333'/><path d='M25 75 Q50 60 75 75 L75 100 L25 100 Z' fill='%23333'/></svg>" alt="Dheeraj Mourya Profile" class="w-full h-full object-cover">
-                            </div>
-                            <div class="flex-1 text-center md:text-left">
-                                <h4 class="text-2xl font-medium text-white m-0 mb-1">Dheeraj Mourya [IIT-R]</h4>
-                                <p class="text-sm text-gray-400 m-0 mb-2">@DheerajmouryaIITR</p>
-                                <div class="text-sm text-gray-400 mb-3">
-                                    <span>32.9K subscribers</span>
-                                    <span class="mx-2">•</span>
-                                    <span>725 videos</span>
-                                </div>
-                                <p class="text-sm text-gray-300 leading-relaxed mb-3">
-                                    Sapne Dekho Unke liye mehnat karo kyunki Sapne poore hote hai 
-                                    <span class="text-blue-400 cursor-pointer">...more</span>
-                                </p>
-                                <div class="text-sm mb-4">
-                                    <a href="#" class="text-blue-400 no-underline hover:underline">instagram.com/_dheeraj_mourya</a>
-                                    <span class="text-gray-300 mx-2">and</span>
-                                    <span class="text-blue-400 cursor-pointer">1 more link</span>
-                                </div>
-                                <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-                                    <button class="flex items-center gap-2 bg-gray-600 text-white border-none py-2 px-4 rounded-2xl text-sm cursor-pointer transition-colors hover:bg-gray-500">
-                                        <span class="text-sm">🔔</span>
-                                        <span>Subscribed</span>
-                                        <span class="text-xs ml-1">▼</span>
-                                    </button>
-                                    <button class="bg-gray-900 text-blue-400 border border-blue-400 py-2 px-4 rounded-2xl text-sm cursor-pointer transition-all hover:bg-blue-400 hover:text-gray-900">Join</button>
-                                </div>
+                    <div class="flex flex-col md:flex-row gap-5 items-start">
+                        <div class="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 bg-gray-700 mx-auto md:mx-0"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f0f0f0'/><circle cx='50' cy='35' r='15' fill='%23333'/><path d='M25 75 Q50 60 75 75 L75 100 L25 100 Z' fill='%23333'/></svg>" alt="Profile" class="w-full h-full" /></div>
+                        <div class="flex-1 text-center md:text-left">
+                            <h4 class="text-2xl font-medium text-white mb-1">Dheeraj Mourya [IIT-R]</h4>
+                            <p class="text-sm text-gray-400 mb-2">@DheerajmouryaIITR</p>
+                            <div class="text-sm text-gray-400 mb-3"><span>32.9K subscribers</span><span class="mx-2">•</span><span>725 videos</span></div>
+                            <p class="text-sm text-gray-300 leading-relaxed mb-3">Sapne Dekho Unke liye mehnat karo kyunki Sapne poore hote hai <span class="text-blue-400 cursor-pointer">...more</span></p>
+                            <div class="text-sm mb-4"><a href="#" class="text-blue-400 hover:underline">instagram.com/_dheeraj_mourya</a><span class="text-gray-300 mx-2">and</span><span class="text-blue-400 cursor-pointer">1 more link</span></div>
+                            <div class="flex gap-3 justify-center md:justify-start">
+                                <button class="flex items-center gap-2 bg-gray-600 text-white py-2 px-4 rounded-full text-sm hover:bg-gray-500 transition-colors"><span>🔔</span><span>Subscribed</span><span class="text-xs ml-1">▼</span></button>
+                                <button class="bg-gray-900 text-blue-400 border border-blue-400 py-2 px-4 rounded-full text-sm hover:bg-blue-400 hover:text-gray-900 transition-all">Join</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <div class="rounded-xl p-8 text-white bg-black border border-gray-700">
                     <h3 class="text-3xl text-white text-center mb-8 font-normal tracking-wider">Instagram</h3>
-                    <div class="w-full">
-                        <div class="flex flex-col md:flex-row gap-6 items-center">
-                            <div class="relative flex-shrink-0">
-                                <div class="w-24 h-24 rounded-full overflow-hidden relative z-10">
-                                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23f09433;stop-opacity:1' /><stop offset='25%' style='stop-color:%23e6683c;stop-opacity:1' /><stop offset='50%' style='stop-color:%23dc2743;stop-opacity:1' /><stop offset='75%' style='stop-color:%23cc2366;stop-opacity:1' /><stop offset='100%' style='stop-color:%23bc1888;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='48' fill='url(%23grad)'/><circle cx='50' cy='50' r='35' fill='%23f0f0f0'/><circle cx='50' cy='35' r='12' fill='%23333'/><path d='M30 70 Q50 55 70 70 L70 85 L30 85 Z' fill='%23333'/></svg>" alt="Dheeraj Mourya" class="w-full h-full object-cover">
-                                </div>
-                                <div class="absolute -top-1 -left-1 w-26 h-26 rounded-full instagram-gradient z-0"></div>
-                            </div>
-                            <div class="flex-1 text-center md:text-left">
-                                <h4 class="text-2xl font-normal text-white m-0 mb-5 tracking-wider">Dheeraj Mourya</h4>
-                                <div class="flex gap-8 justify-center md:justify-start">
-                                    <div class="flex flex-col items-center text-center">
-                                        <span class="text-xl font-semibold text-white mb-1">345</span>
-                                        <span class="text-sm text-white font-normal">posts</span>
-                                    </div>
-                                    <div class="flex flex-col items-center text-center">
-                                        <span class="text-xl font-semibold text-white mb-1">25.6K</span>
-                                        <span class="text-sm text-white font-normal">followers</span>
-                                    </div>
-                                    <div class="flex flex-col items-center text-center">
-                                        <span class="text-xl font-semibold text-white mb-1">1,564</span>
-                                        <span class="text-sm text-white font-normal">following</span>
-                                    </div>
-                                </div>
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <div class="relative flex-shrink-0">
+                            <div class="w-24 h-24 rounded-full overflow-hidden relative z-10"><img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23f09433;stop-opacity:1' /><stop offset='25%' style='stop-color:%23e6683c;stop-opacity:1' /><stop offset='50%' style='stop-color:%23dc2743;stop-opacity:1' /><stop offset='75%' style='stop-color:%23cc2366;stop-opacity:1' /><stop offset='100%' style='stop-color:%23bc1888;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='48' fill='url(%23grad)'/><circle cx='50' cy='50' r='35' fill='%23f0f0f0'/><circle cx='50' cy='35' r='12' fill='%23333'/><path d='M30 70 Q50 55 70 70 L70 85 L30 85 Z' fill='%23333'/></svg>" alt="Profile" class="w-full h-full" /></div>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <h4 class="text-2xl font-normal text-white mb-5 tracking-wider">Dheeraj Mourya</h4>
+                            <div class="flex gap-8 justify-center md:justify-start">
+                                <div class="text-center"><p class="text-xl font-semibold text-white mb-1">345</p><p class="text-sm text-white">posts</p></div>
+                                <div class="text-center"><p class="text-xl font-semibold text-white mb-1">25.6K</p><p class="text-sm text-white">followers</p></div>
+                                <div class="text-center"><p class="text-xl font-semibold text-white mb-1">1,564</p><p class="text-sm text-white">following</p></div>
                             </div>
                         </div>
                     </div>
@@ -544,45 +356,30 @@
     </section>
 
     <!-- What Makes Socialama Different Section -->
-    <section class="py-32 bg-dark-bg text-center">
-        <div class="max-w-6xl mx-auto px-10">
+    <section class="py-32 bg-[#1a1a1a] text-center">
+        <div class="max-w-4xl mx-auto px-10">
             <h2 class="text-4xl md:text-5xl font-normal text-white mb-4 tracking-wider">What Makes Socialama Different?</h2>
-            <p class="text-lg text-gray-300 mb-15 font-light">Why Choose Us Over Others</p>
-            
-            <div class="flex flex-col gap-8 text-left max-w-4xl mx-auto">
-                <div class="flex items-start gap-5 p-8 bg-white bg-opacity-10 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-15 hover:-translate-y-2 hover:border-white hover:border-opacity-20">
-                    <div class="flex-shrink-0 mt-1">
-                        <span class="inline-block w-6 h-6 bg-green-600 text-white rounded-full text-center leading-6 text-sm font-bold">✓</span>
-                    </div>
+            <p class="text-lg text-gray-300 mb-16 font-light">Why Choose Us Over Others</p>
+            <div class="space-y-8 text-left">
+                <div class="flex items-start gap-5 p-8 bg-white/10 rounded-xl border border-white/10 hover:bg-white/15 hover:-translate-y-2 hover:border-white/20 transition-all">
+                    <div class="flex-shrink-0 mt-1"><span class="inline-block w-6 h-6 bg-green-600 text-white rounded-full text-center leading-6 text-sm font-bold">✓</span></div>
                     <div class="flex-1">
                         <h3 class="text-2xl font-semibold text-white mb-3 tracking-wider">Creative + Strategic</h3>
-                        <p class="text-base text-gray-300 leading-relaxed font-light">
-                            Our content isn't just pretty — it performs. Every post has a purpose.
-                        </p>
+                        <p class="text-base text-gray-300 leading-relaxed font-light">Our content isn't just pretty — it performs. Every post has a purpose.</p>
                     </div>
                 </div>
-
-                <div class="flex items-start gap-5 p-8 bg-white bg-opacity-10 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-15 hover:-translate-y-2 hover:border-white hover:border-opacity-20">
-                    <div class="flex-shrink-0 mt-1">
-                        <span class="inline-block w-6 h-6 bg-green-600 text-white rounded-full text-center leading-6 text-sm font-bold">✓</span>
-                    </div>
+                <div class="flex items-start gap-5 p-8 bg-white/10 rounded-xl border border-white/10 hover:bg-white/15 hover:-translate-y-2 hover:border-white/20 transition-all">
+                    <div class="flex-shrink-0 mt-1"><span class="inline-block w-6 h-6 bg-green-600 text-white rounded-full text-center leading-6 text-sm font-bold">✓</span></div>
                     <div class="flex-1">
                         <h3 class="text-2xl font-semibold text-white mb-3 tracking-wider">Fast, Flexible, Focused</h3>
-                        <p class="text-base text-gray-300 leading-relaxed font-light">
-                            Need to catch a trend? Pivot a campaign mid-way? We adapt quickly — no delays, no drama.
-                        </p>
+                        <p class="text-base text-gray-300 leading-relaxed font-light">Need to catch a trend? Pivot a campaign mid-way? We adapt quickly — no delays, no drama.</p>
                     </div>
                 </div>
-
-                <div class="flex items-start gap-5 p-8 bg-white bg-opacity-10 rounded-xl border border-white border-opacity-10 transition-all duration-300 hover:bg-white hover:bg-opacity-15 hover:-translate-y-2 hover:border-white hover:border-opacity-20">
-                    <div class="flex-shrink-0 mt-1">
-                        <span class="inline-block w-6 h-6 bg-green-600 text-white rounded-full text-center leading-6 text-sm font-bold">✓</span>
-                    </div>
+                <div class="flex items-start gap-5 p-8 bg-white/10 rounded-xl border border-white/10 hover:bg-white/15 hover:-translate-y-2 hover:border-white/20 transition-all">
+                    <div class="flex-shrink-0 mt-1"><span class="inline-block w-6 h-6 bg-green-600 text-white rounded-full text-center leading-6 text-sm font-bold">✓</span></div>
                     <div class="flex-1">
                         <h3 class="text-2xl font-semibold text-white mb-3 tracking-wider">Founder-Driven</h3>
-                        <p class="text-base text-gray-300 leading-relaxed font-light">
-                            Dheeraj Mourya is involved in every project — guiding strategy, content, and execution. You work with people, not just a company.
-                        </p>
+                        <p class="text-base text-gray-300 leading-relaxed font-light">Dheeraj Mourya is involved in every project — guiding strategy, content, and execution. You work with people, not just a company.</p>
                     </div>
                 </div>
             </div>
@@ -590,48 +387,17 @@
     </section>
 
     <!-- Contact/CTA Section -->
-    <section class="min-h-screen flex items-center justify-center relative contact-bg overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full contact-overlay z-10"></div>
-        <div class="max-w-6xl mx-auto px-10">
-            <div class="relative z-20 text-center py-15">
-                <h1 class="text-4xl md:text-6xl font-normal text-white mb-8 tracking-wider leading-tight">Ready to Go Viral with Us?</h1>
-                <p class="text-lg text-gray-300 leading-relaxed mb-12 max-w-2xl mx-auto font-light">
-                    Stop guessing what works. Start creating content that actually does. Whether you're a brand, a founder, or a creator — let's build your digital presence like it was always meant to blow up.
-                </p>
-                
-                <div class="mb-12">
-                    <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-widest-3 uppercase gradient-text">SOCiALAMA</h2>
-                </div>
-                
-                <div class="flex flex-col gap-6 items-center">
-                    <div class="flex items-center gap-4 py-4 px-6 bg-white bg-opacity-10 rounded-full border border-white border-opacity-10 transition-all duration-300 min-w-72 justify-start hover:bg-white hover:bg-opacity-20 hover:border-white hover:border-opacity-20 hover:-translate-y-1 hover:shadow-2xl">
-                        <div class="w-5 h-5 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-envelope text-lg text-red-400"></i>
-                        </div>
-                        <span class="text-base text-white font-normal tracking-wider">socialama@gmail.com</span>
-                    </div>
-                    
-                    <div class="flex items-center gap-4 py-4 px-6 bg-white bg-opacity-10 rounded-full border border-white border-opacity-10 transition-all duration-300 min-w-72 justify-start hover:bg-white hover:bg-opacity-20 hover:border-white hover:border-opacity-20 hover:-translate-y-1 hover:shadow-2xl">
-                        <div class="w-5 h-5 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-globe text-lg text-teal-400"></i>
-                        </div>
-                        <span class="text-base text-white font-normal tracking-wider">socialama.in</span>
-                    </div>
-                    
-                    <div class="flex items-center gap-4 py-4 px-6 bg-white bg-opacity-10 rounded-full border border-white border-opacity-10 transition-all duration-300 min-w-72 justify-start hover:bg-white hover:bg-opacity-20 hover:border-white hover:border-opacity-20 hover:-translate-y-1 hover:shadow-2xl">
-                        <div class="w-5 h-5 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-phone text-lg text-blue-400"></i>
-                        </div>
-                        <span class="text-base text-white font-normal tracking-wider">8707215896 [Dhruv]</span>
-                    </div>
-                    
-                    <div class="flex items-center gap-4 py-4 px-6 bg-white bg-opacity-10 rounded-full border border-white border-opacity-10 transition-all duration-300 min-w-72 justify-start hover:bg-white hover:bg-opacity-20 hover:border-white hover:border-opacity-20 hover:-translate-y-1 hover:shadow-2xl">
-                        <div class="w-5 h-5 flex items-center justify-center flex-shrink-0">
-                            <i class="fab fa-instagram text-lg text-pink-500"></i>
-                        </div>
-                        <span class="text-base text-white font-normal tracking-wider">@socialama_official</span>
-                    </div>
-                </div>
+    <section class="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] overflow-hidden">
+        <div class="absolute inset-0 z-10" style="background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);"></div>
+        <div class="max-w-6xl mx-auto px-10 relative z-20 text-center py-16">
+            <h1 class="text-4xl md:text-6xl font-normal text-white mb-8 tracking-wider leading-tight">Ready to Go Viral with Us?</h1>
+            <p class="text-lg text-gray-300 leading-relaxed mb-12 max-w-2xl mx-auto font-light">Stop guessing what works. Start creating content that actually does. Whether you're a brand, a founder, or a creator — let's build your digital presence like it was always meant to blow up.</p>
+            <div class="mb-12"><h2 class="text-3xl md:text-5xl font-semibold text-white tracking-[0.2em] uppercase gradient-text bg-gradient-to-r from-white to-gray-400">SOCiALAMA</h2></div>
+            <div class="space-y-6 max-w-sm mx-auto">
+                <div class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all"><div class="w-5 h-5 flex-shrink-0"><i class="fas fa-envelope text-lg text-red-400"></i></div><span class="text-base text-white tracking-wider">socialama@gmail.com</span></div>
+                <div class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all"><div class="w-5 h-5 flex-shrink-0"><i class="fas fa-globe text-lg text-teal-400"></i></div><span class="text-base text-white tracking-wider">socialama.in</span></div>
+                <div class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all"><div class="w-5 h-5 flex-shrink-0"><i class="fas fa-phone text-lg text-blue-400"></i></div><span class="text-base text-white tracking-wider">8707215896 [Dhruv]</span></div>
+                <div class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all"><div class="w-5 h-5 flex-shrink-0"><i class="fab fa-instagram text-lg text-pink-500"></i></div><span class="text-base text-white tracking-wider">@socialama_official</span></div>
             </div>
         </div>
     </section>
