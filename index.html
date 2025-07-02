@@ -100,16 +100,20 @@
         }
 
 
-        .main-logo {
-            position: absolute;
-            left: 50%;
-            top: 45%;
-            transform: translate(-50%, -50%);
-            width: 880px;
-            z-index: 10;
-            filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.3));
-            pointer-events: none;
-        }
+      .main-logo {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 350px; /* Perfect size */
+    max-width: 90vw; /* Screen se bada na ho */
+    z-index: 10;
+    filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+}
+
+
+
 
         .logo-collage-caption {
             position: absolute;
@@ -303,74 +307,120 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- Service Cards -->
                 <div
-                    class="bg-white bg-opacity-5 rounded-2xl p-8  border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
+                    class="bg-white bg-opacity-5 rounded-2xl p-8 border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
                     <div class="flex justify-center items-center mb-6">
                         <div
-                            class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white instagram-gradient">
-                            <i class="fab fa-instagram"></i>
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white instagram-gradient">
+                            <img src="images/insta.png" alt="Instagram" class="service-icon-img" />
                         </div>
                     </div>
-                    <div
-                        class="inline-block text-sm font-thin text-white mb-5 bg-gradient-to-r from-[#008D10] to-[#004808] px-4 py-2 rounded-full">
-                        Organic Growth
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#008D10] to-[#004808] px-4 py-2 rounded-full">
+                            Organic Growth
+                        </div>
                     </div>
-
                     <h3 class="text-xl font-semibold text-white mb-5">Conquer Insta with Viral Content!</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">We create scroll-stopping Instagram
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">We create scroll stopping Instagram
                         content that gets you noticed. From viral reels to engaging stories, we craft content that not
                         only looks good but drives real engagement and converts viewers into loyal followers.</p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white youtube-gradient">
-                        <i class="fab fa-youtube"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white youtube-gradient">
+                            <img src="images/youtube2.png" alt="YouTube" class="service-icon-img" />
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#FF0000] to-[#CC0000] px-4 py-2 rounded-full">
+                            Storytelling
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Rule YT with <span
                             class="text-red-400 font-bold">Storytelling</span></h3>
                     <p class="text-sm text-gray-300 leading-relaxed font-light">Let structured storytelling set you
-                        apart from the crowd. We create compelling, binge-worthy content that keeps viewers hooked from
-                        start to finish, driving subscriptions and long-term growth.</p>
+                        apart from the crowd. We create compelling, binge worthy content that keeps viewers hooked from
+                        start to finish, driving subscriptions and long term growth.</p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white multi-platform-gradient">
-                        <i class="fas fa-th"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white multi-platform-gradient">
+                            <img src="images/socials.png" alt="Multi-Platform" class="service-icon-img" />
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#1E90FF] to-[#0066CC] px-4 py-2 rounded-full">
+                            Brand Personal
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Ace Every platform with Multi-Platform</h3>
                     <p class="text-sm text-gray-300 leading-relaxed font-light">We help brands grow across Facebook,
                         WhatsApp, LinkedIn, and Email to create brand awareness and drive conversions. Our
-                        multi-platform approach ensures your message reaches your audience where they are most active.
+                        multi platform approach ensures your message reaches your audience where they are most active.
                     </p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white design-gradient">
-                        <i class="fas fa-palette"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white design-gradient">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#9B59B6] to-[#8E44AD] px-4 py-2 rounded-full">
+                            Brand
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Design That Speaks Your Brand!</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">We design scroll-stopping visuals—from
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">We design scroll stopping visuals from
                         logos and graphics to complete brand identities. Our designs don't just look good, they
                         communicate your brand story and values effectively.</p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white content-gradient">
-                        <i class="fas fa-edit"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white content-gradient">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#00CED1] to-[#008B8B] px-4 py-2 rounded-full">
+                            Creator
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Strategic Content Creation & Copywriting</h3>
                     <p class="text-sm text-gray-300 leading-relaxed font-light">We connect brands with modern audiences
                         through compelling content that drives engagement and conversions. Our strategic approach
                         ensures every piece of content serves a purpose in your marketing funnel.</p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white consultation-gradient">
-                        <i class="fas fa-comments"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white consultation-gradient">
+                            <img src="images/dheeraj.png" alt="Consultation" class="service-icon-img" />
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#FF8C00] to-[#FF6347] px-4 py-2 rounded-full">
+                            Consultation
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Consultation by Founders & Team</h3>
                     <p class="text-sm text-gray-300 leading-relaxed font-light">Get direct access to our founder and
@@ -380,6 +430,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Making Your Life Easier Section -->
     <section class="py-32 bg-[#1a1a1a]">
@@ -477,235 +528,83 @@
         </div>
     </section>
 
-<style>
-/* Profile Cards Specific Styles */
-@keyframes profile-stats-counter {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.profile-card-hover {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.profile-card-hover:hover {
-    transform: translateY(-8px) scale(1.02);
-}
-
-.profile-stats-animation {
-    animation: profile-stats-counter 2s ease-out;
-}
-
-.profile-button-hover {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.profile-button-hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
-.profile-button-hover:hover::before {
-    left: 100%;
-}
-
-.youtube-card-button {
-    background: #dc2626;
-    transition: all 0.3s ease;
-}
-
-.youtube-card-button:hover {
-    background: #b91c1c;
-    transform: scale(1.05);
-}
-
-.instagram-card-button {
-    background: linear-gradient(45deg, #ec4899, #8b5cf6);
-    transition: all 0.3s ease;
-}
-
-.instagram-card-button:hover {
-    background: linear-gradient(45deg, #db2777, #7c3aed);
-    transform: scale(1.05);
-}
-
-.profile-image-hover {
-    transition: transform 0.3s ease;
-}
-
-.profile-image-hover:hover {
-    transform: scale(1.1);
-}
-
-.profile-text-hover {
-    transition: color 0.3s ease;
-}
-
-.profile-text-hover:hover {
-    color: #ef4444;
-}
-
-.instagram-text-hover {
-    transition: color 0.3s ease;
-}
-
-.instagram-text-hover:hover {
-    color: #ec4899;
-}
-</style>
-
-<!-- Our Work Section -->
-<section class="py-32 bg-[#1a1a1a]">
-    <div class="max-w-6xl mx-auto px-10">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-6 tracking-[0.1em]">
-                Our Work
-            </h2>
-            <div class="w-24 h-1 bg-gradient-to-r from-white to-[#1a1a1a] mx-auto rounded-full"></div>
+  <section class="py-32 bg-[#1a1a1a]">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-[0.1em]">Our Work</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+      <!-- Instagram Card -->
+      <div class="rounded-xl p-8 bg-black border border-gray-700 shadow-lg flex flex-col md:flex-row items-center animate-fade-in-up" style="animation-delay:0.1s;">
+        <!-- Profile + Platform Logo -->
+        <div class="relative w-32 h-32 flex-shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 md:mr-8">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/76619133/51311b74-66c2-4bb3-bc3d-3ff31fc459bd/instagram.jpg" alt="Instagram Profile" class="w-32 h-32 rounded-full border-4 border-gray-700 shadow-lg object-cover transition-transform duration-500 hover:scale-105">
+          <img src="instagra.png" alt="Instagram Logo" class="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-white p-1 shadow-lg border-2 border-black animate-bounce">
         </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- YouTube Card -->
-            <div class="profile-card-hover rounded-2xl p-8 text-white bg-black border border-gray-800 relative overflow-hidden group">
-                <!-- Background Animation -->
-                <div class="absolute inset-0 bg-gradient-to-br from-red-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div class="relative z-10">
-                    <div class="flex items-center justify-center mb-8">
-                        <svg class="w-12 h-12 text-red-500 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                        <h3 class="text-3xl font-bold tracking-wider bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-                            YouTube
-                        </h3>
-                    </div>
-                    
-                    <div class="flex flex-col md:flex-row gap-6 items-start">
-                        <div class="relative flex-shrink-0 mx-auto md:mx-0">
-                            <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-red-500 transition-shadow duration-300">
-                                <img src="https://yt3.googleusercontent.com/OzDizi3HAZB9lj0joQCs6PGk0EWx9IfyP0RGIXt0qf70yso8Fyu7tPnaNlVzlfNNkUIt4LmhVw=s160-c-k-c0x00ffffff-no-rj"
-                                    alt="Dheeraj Mourya Profile" class="w-full h-full object-cover profile-image-hover" />
-                            </div>
-                            <div class="absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        <div class="flex-1 text-center md:text-left">
-                            <h4 class="text-2xl font-bold text-white mb-2 profile-text-hover">
-                                Dheeraj Mourya [IIT-R]
-                            </h4>
-                            <p class="text-sm text-gray-400 mb-3 font-medium">@DheerajmouryaIITR</p>
-                            
-                            <div class="flex gap-6 justify-center md:justify-start mb-4">
-                                <div class="text-center profile-stats-animation">
-                                    <p class="text-xl font-bold text-red-400 mb-1">32.9K</p>
-                                    <p class="text-xs text-gray-400 uppercase tracking-wide">Subscribers</p>
-                                </div>
-                                <div class="text-center profile-stats-animation">
-                                    <p class="text-xl font-bold text-red-400 mb-1">725</p>
-                                    <p class="text-xs text-gray-400 uppercase tracking-wide">Videos</p>
-                                </div>
-                            </div>
-                            
-                            <p class="text-sm text-gray-300 leading-relaxed mb-4 profile-text-hover">
-                                Sapne Dekho Unke liye mehnat karo kyunki Sapne poore hote hai
-                                <span class="text-red-400 cursor-pointer hover:text-red-300 transition-colors duration-200">...more</span>
-                            </p>
-                            
-                            <div class="flex gap-3 justify-center md:justify-start">
-                                <a href="https://www.youtube.com/@DheerajmouryaIITR" target="_blank" 
-                                   class="profile-button-hover youtube-card-button flex items-center gap-2 text-white py-3 px-6 rounded-full text-sm font-medium">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
-                                    </svg>
-                                    Visit Channel
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Profile Info -->
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl md:text-3xl font-semibold text-white break-all">_dheeraj_mourya</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.42l-1.41-1.41-9.59 9.59-4.59-4.59-1.41 1.41 6 6z"/></svg>
+          </div>
+          <div class="flex gap-6 mb-3">
+            <div>
+              <span class="font-bold text-white">391</span>
+              <span class="text-gray-400">posts</span>
             </div>
-
-            <!-- Instagram Card -->
-            <div class="profile-card-hover rounded-2xl p-8 text-white bg-black border border-gray-800 relative overflow-hidden group">
-                <!-- Background Animation -->
-                <div class="absolute inset-0 bg-gradient-to-br from-pink-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div class="relative z-10">
-                    <div class="flex items-center justify-center mb-8">
-                        <svg class="w-12 h-12 text-pink-500 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                        <h3 class="text-3xl font-bold tracking-wider bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-                            Instagram
-                        </h3>
-                    </div>
-                    
-                    <div class="flex flex-col md:flex-row gap-6 items-center">
-                        <div class="relative flex-shrink-0">
-                            <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 transition-shadow duration-300">
-                                <div class="w-full h-full rounded-full overflow-hidden bg-black">
-                                    <img src="https://yt3.googleusercontent.com/OzDizi3HAZB9lj0joQCs6PGk0EWx9IfyP0RGIXt0qf70yso8Fyu7tPnaNlVzlfNNkUIt4LmhVw=s160-c-k-c0x00ffffff-no-rj"
-                                        alt="Dheeraj Mourya Profile" class="w-full h-full object-cover profile-image-hover" />
-                                </div>
-                            </div>
-                            <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
-                                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        <div class="flex-1 text-center md:text-left">
-                            <h4 class="text-2xl font-bold text-white mb-6 tracking-wide instagram-text-hover">
-                                Dheeraj Mourya
-                            </h4>
-                            
-                            <div class="flex gap-8 justify-center md:justify-start mb-6">
-                                <div class="text-center profile-stats-animation">
-                                    <p class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent mb-1">345</p>
-                                    <p class="text-sm text-gray-400 uppercase tracking-wide">Posts</p>
-                                </div>
-                                <div class="text-center profile-stats-animation">
-                                    <p class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent mb-1">25.6K</p>
-                                    <p class="text-sm text-gray-400 uppercase tracking-wide">Followers</p>
-                                </div>
-                                <div class="text-center profile-stats-animation">
-                                    <p class="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent mb-1">1,564</p>
-                                    <p class="text-sm text-gray-400 uppercase tracking-wide">Following</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex gap-3 justify-center md:justify-start">
-                                <a href="https://www.instagram.com/_dheeraj_mourya/" target="_blank" 
-                                   class="profile-button-hover instagram-card-button flex items-center gap-2 text-white py-3 px-6 rounded-full text-sm font-medium">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                    </svg>
-                                    Visit Profile
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div>
+              <span class="font-bold text-white">26.1K</span>
+              <span class="text-gray-400">followers</span>
             </div>
+            <div>
+              <span class="font-bold text-white">1,652</span>
+              <span class="text-gray-400">following</span>
+            </div>
+          </div>
+          <div class="mb-1">
+            <span class="font-bold text-white">Dheeraj Mourya</span>
+            <span class="text-gray-400 ml-2">Reel creator</span>
+          </div>
+          <div class="text-gray-200 text-sm mb-1 flex items-center"><span class="mr-2">⚡</span>365 Days 365 Minivlog challenge</div>
+          <div class="text-gray-200 text-sm mb-1 flex items-center"><span class="mr-2">☑️</span>Join our journey to be the best</div>
+          <div class="text-gray-200 text-sm mb-1 flex items-center"><span class="mr-2">✉️</span>dheerajjhansi13@gmail.com</div>
+          <div class="text-gray-200 text-sm flex items-center"><span class="mr-2">🎓</span>IIT Roorkee'27</div>
         </div>
+      </div>
+      <!-- YouTube Card -->
+      <div class="rounded-xl p-8 bg-gray-900 border border-gray-700 shadow-lg flex flex-col md:flex-row items-center animate-fade-in-up" style="animation-delay:0.2s;">
+        <!-- Profile + Platform Logo -->
+        <div class="relative w-32 h-32 flex-shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 md:mr-8">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/76619133/87dcb378-a9c4-4551-96a9-3d05f95136cb/youtube.jpg" alt="YouTube Profile" class="w-32 h-32 rounded-full border-4 border-gray-700 shadow-lg object-cover transition-transform duration-500 hover:scale-105">
+          <img src="youtube.png" alt="YouTube Logo" class="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-white p-1 shadow-lg border-2 border-gray-900 animate-bounce">
+        </div>
+        <!-- Profile Info -->
+        <div class="flex-1 min-w-0">
+          <div class="text-2xl md:text-3xl font-semibold text-white mb-1 break-all">Dheeraj Mourya [IIT-R]</div>
+          <div class="text-gray-400 mb-3">@DheerajmouryaIITR</div>
+          <div class="flex gap-6 mb-3">
+            <div>
+              <span class="font-bold text-white">33.3K</span>
+              <span class="text-gray-400">subscribers</span>
+            </div>
+            <div>
+              <span class="font-bold text-white">742</span>
+              <span class="text-gray-400">videos</span>
+            </div>
+          </div>
+          <div class="text-gray-200 text-sm mb-2">Sapne Dekho Unke liye mehnat karo kyunki Sapne poore hote hai</div>
+          <div class="text-sm mb-4">
+            <a href="https://www.instagram.com/_dheeraj_mourya/" class="text-blue-400 hover:underline">instagram.com/_dheeraj_mourya</a>
+            <span class="text-gray-300 mx-2">and</span>
+            <span class="text-blue-400 cursor-pointer">1 more link</span>
+          </div>
+          <div class="flex gap-3">
+            <button class="flex items-center gap-2 bg-gray-600 text-white py-2 px-4 rounded-full text-sm hover:bg-gray-500 transition-colors"><span>🔔</span>Subscribed<span class="text-xs ml-1">▼</span></button>
+            <button class="bg-gray-900 text-blue-400 border border-blue-400 py-2 px-4 rounded-full text-sm hover:bg-blue-400 hover:text-gray-900 transition-all">Join</button>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-
-<!-- Stats Dashboard -->
-    <div class="bg-gradient-to-tr from-[#232526] to-[#414345] rounded-3xl py-12 px-4 md:px-12 shadow-2xl max-w-5xl mx-auto">
+    <!-- Stats Dashboard -->
+    <div class="bg-gradient-to-tr from-[#232526] to-[#414345] rounded-3xl py-12 px-4 md:px-12 shadow-2xl">
       <h3 class="text-2xl md:text-3xl font-semibold text-center text-white mb-10 tracking-wide">Instagram Reel Insights</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Stat Card Example -->
@@ -870,6 +769,17 @@
   </div>
 </section>
 
+<style>
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(40px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in-up {
+  animation: fade-in-up 1s cubic-bezier(.23,1.01,.32,1) both;
+}
+</style>
+
+
     <!-- What Makes Socialama Different Section -->
     <section class="py-32 bg-[#1a1a1a] text-center">
         <div class="max-w-4xl mx-auto px-10">
@@ -915,47 +825,42 @@
         </div>
     </section>
 
-    <!-- Contact/CTA Section -->
-    <section
-        class="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] overflow-hidden">
-        <div class="absolute inset-0 z-10"
-            style="background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);">
-        </div>
-        <div class="max-w-6xl mx-auto px-10 relative z-20 text-center py-16">
-            <h1 class="text-4xl md:text-6xl font-normal text-white mb-8 tracking-wider leading-tight">Ready to Go Viral
-                with Us?</h1>
-            <p class="text-lg text-gray-300 leading-relaxed mb-12 max-w-2xl mx-auto font-light">Stop guessing what
-                works. Start creating content that actually does. Whether you're a brand, a founder, or a creator —
-                let's build your digital presence like it was always meant to blow up.</p>
-            <div class="mb-12">
-                <h2
-                    class="text-3xl md:text-5xl font-semibold text-white tracking-[0.2em] uppercase gradient-text bg-gradient-to-r from-white to-gray-400">
-                    SOCiALAMA</h2>
-            </div>
-            <div class="space-y-6 max-w-sm mx-auto">
-                <div
-                    class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all">
-                    <div class="w-5 h-5 flex-shrink-0"><i class="fas fa-envelope text-lg text-red-400"></i></div><span
-                        class="text-base text-white tracking-wider">socialama@gmail.com</span>
-                </div>
-                <div
-                    class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all">
-                    <div class="w-5 h-5 flex-shrink-0"><i class="fas fa-globe text-lg text-teal-400"></i></div><span
-                        class="text-base text-white tracking-wider">socialama.in</span>
-                </div>
-                <div
-                    class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all">
-                    <div class="w-5 h-5 flex-shrink-0"><i class="fas fa-phone text-lg text-blue-400"></i></div><span
-                        class="text-base text-white tracking-wider">8707215896 [Dhruv]</span>
-                </div>
-                <div
-                    class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all">
-                    <div class="w-5 h-5 flex-shrink-0"><i class="fab fa-instagram text-lg text-pink-500"></i></div><span
-                        class="text-base text-white tracking-wider">@socialama_official</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Contact/CTA Section with Centered Collage and Content -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Collage as background -->
+  <div class="absolute inset-0 w-full h-full pointer-events-none">
+    <div class="logo-collage-wrapper w-full h-full">
+      <img src="images/1.jpg" class="collage-img img1" alt="" />
+      <img src="images/2.jpg" class="collage-img img2" alt="" />
+      <img src="images/3.jpg" class="collage-img img3" alt="" />
+      <img src="images/4.jpg" class="collage-img img4" alt="" />
+      <img src="images/5.jpg" class="collage-img img5" alt="" />
+      <img src="images/6.jpg" class="collage-img img6" alt="" />
+      <img src="images/7.jpg" class="collage-img img7" alt="" />
+    </div>
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+  <!-- Centered Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center w-full max-w-2xl px-4 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-5">Ready to Go Viral with Us?</h1>
+    <p class="text-base md:text-lg text-gray-200 mb-7 font-light max-w-xl">
+      Stop guessing what works. Start creating content that actually does. Whether you're a brand, a founder, or a creator.  Let's build your digital presence like it was always meant to blow up.
+    </p>
+    <img src="images/LOGO.png" alt="SOCiALAMA Logo" class="mx-auto mb-6" style="width: 200px;"/>
+    <div class="space-y-3 text-white text-base font-light mb-2">
+      <div><i class="fas fa-envelope text-red-400 mr-2"></i> socialama@gmail.com</div>
+      <div><i class="fas fa-globe text-teal-400 mr-2"></i> socialama.in</div>
+      <div><i class="fas fa-phone text-blue-400 mr-2"></i> 8707215896 [Dhruv]</div>
+      <div><i class="fab fa-instagram text-pink-500 mr-2"></i> @socialama_official</div>
+    </div>
+  </div>
+</section>
+
+
+        
+       
+
 </body>
 
 </html>
