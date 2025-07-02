@@ -100,16 +100,20 @@
         }
 
 
-        .main-logo {
-            position: absolute;
-            left: 50%;
-            top: 45%;
-            transform: translate(-50%, -50%);
-            width: 880px;
-            z-index: 10;
-            filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.3));
-            pointer-events: none;
-        }
+      .main-logo {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 350px; /* Perfect size */
+    max-width: 90vw; /* Screen se bada na ho */
+    z-index: 10;
+    filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+}
+
+
+
 
         .logo-collage-caption {
             position: absolute;
@@ -303,74 +307,120 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <!-- Service Cards -->
                 <div
-                    class="bg-white bg-opacity-5 rounded-2xl p-8  border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
+                    class="bg-white bg-opacity-5 rounded-2xl p-8 border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
                     <div class="flex justify-center items-center mb-6">
                         <div
-                            class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white instagram-gradient">
-                            <i class="fab fa-instagram"></i>
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white instagram-gradient">
+                            <img src="images/insta.png" alt="Instagram" class="service-icon-img" />
                         </div>
                     </div>
-                    <div
-                        class="inline-block text-sm font-thin text-white mb-5 bg-gradient-to-r from-[#008D10] to-[#004808] px-4 py-2 rounded-full">
-                        Organic Growth
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#008D10] to-[#004808] px-4 py-2 rounded-full">
+                            Organic Growth
+                        </div>
                     </div>
-
                     <h3 class="text-xl font-semibold text-white mb-5">Conquer Insta with Viral Content!</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">We create scroll-stopping Instagram
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">We create scroll stopping Instagram
                         content that gets you noticed. From viral reels to engaging stories, we craft content that not
                         only looks good but drives real engagement and converts viewers into loyal followers.</p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white youtube-gradient">
-                        <i class="fab fa-youtube"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white youtube-gradient">
+                            <img src="images/youtube2.png" alt="YouTube" class="service-icon-img" />
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#FF0000] to-[#CC0000] px-4 py-2 rounded-full">
+                            Storytelling
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Rule YT with <span
                             class="text-red-400 font-bold">Storytelling</span></h3>
                     <p class="text-sm text-gray-300 leading-relaxed font-light">Let structured storytelling set you
-                        apart from the crowd. We create compelling, binge-worthy content that keeps viewers hooked from
-                        start to finish, driving subscriptions and long-term growth.</p>
+                        apart from the crowd. We create compelling, binge worthy content that keeps viewers hooked from
+                        start to finish, driving subscriptions and long term growth.</p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white multi-platform-gradient">
-                        <i class="fas fa-th"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white multi-platform-gradient">
+                            <img src="images/socials.png" alt="Multi-Platform" class="service-icon-img" />
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#1E90FF] to-[#0066CC] px-4 py-2 rounded-full">
+                            Brand Personal
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Ace Every platform with Multi-Platform</h3>
                     <p class="text-sm text-gray-300 leading-relaxed font-light">We help brands grow across Facebook,
                         WhatsApp, LinkedIn, and Email to create brand awareness and drive conversions. Our
-                        multi-platform approach ensures your message reaches your audience where they are most active.
+                        multi platform approach ensures your message reaches your audience where they are most active.
                     </p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white design-gradient">
-                        <i class="fas fa-palette"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white design-gradient">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#9B59B6] to-[#8E44AD] px-4 py-2 rounded-full">
+                            Brand
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Design That Speaks Your Brand!</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed font-light">We design scroll-stopping visuals—from
+                    <p class="text-sm text-gray-300 leading-relaxed font-light">We design scroll stopping visuals from
                         logos and graphics to complete brand identities. Our designs don't just look good, they
                         communicate your brand story and values effectively.</p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white content-gradient">
-                        <i class="fas fa-edit"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white content-gradient">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#00CED1] to-[#008B8B] px-4 py-2 rounded-full">
+                            Creator
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Strategic Content Creation & Copywriting</h3>
                     <p class="text-sm text-gray-300 leading-relaxed font-light">We connect brands with modern audiences
                         through compelling content that drives engagement and conversions. Our strategic approach
                         ensures every piece of content serves a purpose in your marketing funnel.</p>
                 </div>
+
                 <div
                     class="bg-white bg-opacity-5 rounded-2xl p-8 border border-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:bg-opacity-10 hover:border-opacity-20">
-                    <div
-                        class="w-16 h-16 mb-6 rounded-xl flex items-center justify-center text-2xl text-white consultation-gradient">
-                        <i class="fas fa-comments"></i>
+                    <div class="flex justify-center items-center mb-6">
+                        <div
+                            class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white consultation-gradient">
+                            <img src="images/dheeraj.png" alt="Consultation" class="service-icon-img" />
+                        </div>
+                    </div>
+                    <div class="flex justify-center mb-5">
+                        <div
+                            class="inline-block text-sm font-thin text-white bg-gradient-to-r from-[#FF8C00] to-[#FF6347] px-4 py-2 rounded-full">
+                            Consultation
+                        </div>
                     </div>
                     <h3 class="text-xl font-semibold text-white mb-5">Consultation by Founders & Team</h3>
                     <p class="text-sm text-gray-300 leading-relaxed font-light">Get direct access to our founder and
@@ -380,6 +430,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Making Your Life Easier Section -->
     <section class="py-32 bg-[#1a1a1a]">
@@ -477,70 +528,257 @@
         </div>
     </section>
 
-    <!-- Our Work Section -->
-    <section class="py-32 bg-[#1a1a1a]">
-        <div class="max-w-6xl mx-auto px-10">
-            <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-[0.1em]">Our Work</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="rounded-xl p-8 text-white bg-gray-900 border border-gray-700">
-                    <h3 class="text-3xl text-white text-center mb-8 font-normal tracking-wider">YouTube</h3>
-                    <div class="flex flex-col md:flex-row gap-5 items-start">
-                        <div class="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 bg-gray-700 mx-auto md:mx-0">
-                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f0f0f0'/><circle cx='50' cy='35' r='15' fill='%23333'/><path d='M25 75 Q50 60 75 75 L75 100 L25 100 Z' fill='%23333'/></svg>"
-                                alt="Profile" class="w-full h-full" />
-                        </div>
-                        <div class="flex-1 text-center md:text-left">
-                            <h4 class="text-2xl font-medium text-white mb-1">Dheeraj Mourya [IIT-R]</h4>
-                            <p class="text-sm text-gray-400 mb-2">@DheerajmouryaIITR</p>
-                            <div class="text-sm text-gray-400 mb-3"><span>32.9K subscribers</span><span
-                                    class="mx-2">•</span><span>725 videos</span></div>
-                            <p class="text-sm text-gray-300 leading-relaxed mb-3">Sapne Dekho Unke liye mehnat karo
-                                kyunki Sapne poore hote hai <span class="text-blue-400 cursor-pointer">...more</span>
-                            </p>
-                            <div class="text-sm mb-4"><a href="#"
-                                    class="text-blue-400 hover:underline">instagram.com/_dheeraj_mourya</a><span
-                                    class="text-gray-300 mx-2">and</span><span class="text-blue-400 cursor-pointer">1
-                                    more link</span></div>
-                            <div class="flex gap-3 justify-center md:justify-start">
-                                <button
-                                    class="flex items-center gap-2 bg-gray-600 text-white py-2 px-4 rounded-full text-sm hover:bg-gray-500 transition-colors"><span>🔔</span><span>Subscribed</span><span
-                                        class="text-xs ml-1">▼</span></button>
-                                <button
-                                    class="bg-gray-900 text-blue-400 border border-blue-400 py-2 px-4 rounded-full text-sm hover:bg-blue-400 hover:text-gray-900 transition-all">Join</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="rounded-xl p-8 text-white bg-black border border-gray-700">
-                    <h3 class="text-3xl text-white text-center mb-8 font-normal tracking-wider">Instagram</h3>
-                    <div class="flex flex-col md:flex-row gap-6 items-center">
-                        <div class="relative flex-shrink-0">
-                            <div class="w-24 h-24 rounded-full overflow-hidden relative z-10"><img
-                                    src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23f09433;stop-opacity:1' /><stop offset='25%' style='stop-color:%23e6683c;stop-opacity:1' /><stop offset='50%' style='stop-color:%23dc2743;stop-opacity:1' /><stop offset='75%' style='stop-color:%23cc2366;stop-opacity:1' /><stop offset='100%' style='stop-color:%23bc1888;stop-opacity:1' /></linearGradient></defs><circle cx='50' cy='50' r='48' fill='url(%23grad)'/><circle cx='50' cy='50' r='35' fill='%23f0f0f0'/><circle cx='50' cy='35' r='12' fill='%23333'/><path d='M30 70 Q50 55 70 70 L70 85 L30 85 Z' fill='%23333'/></svg>"
-                                    alt="Profile" class="w-full h-full" /></div>
-                        </div>
-                        <div class="flex-1 text-center md:text-left">
-                            <h4 class="text-2xl font-normal text-white mb-5 tracking-wider">Dheeraj Mourya</h4>
-                            <div class="flex gap-8 justify-center md:justify-start">
-                                <div class="text-center">
-                                    <p class="text-xl font-semibold text-white mb-1">345</p>
-                                    <p class="text-sm text-white">posts</p>
-                                </div>
-                                <div class="text-center">
-                                    <p class="text-xl font-semibold text-white mb-1">25.6K</p>
-                                    <p class="text-sm text-white">followers</p>
-                                </div>
-                                <div class="text-center">
-                                    <p class="text-xl font-semibold text-white mb-1">1,564</p>
-                                    <p class="text-sm text-white">following</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <section class="py-32 bg-[#1a1a1a]">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl md:text-6xl font-light text-white text-center mb-20 tracking-[0.1em]">Our Work</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+      <!-- Instagram Card -->
+      <div class="rounded-xl p-8 bg-black border border-gray-700 shadow-lg flex flex-col md:flex-row items-center animate-fade-in-up" style="animation-delay:0.1s;">
+        <!-- Profile + Platform Logo -->
+        <div class="relative w-32 h-32 flex-shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 md:mr-8">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/76619133/51311b74-66c2-4bb3-bc3d-3ff31fc459bd/instagram.jpg" alt="Instagram Profile" class="w-32 h-32 rounded-full border-4 border-gray-700 shadow-lg object-cover transition-transform duration-500 hover:scale-105">
+          <img src="instagra.png" alt="Instagram Logo" class="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-white p-1 shadow-lg border-2 border-black animate-bounce">
         </div>
-    </section>
+        <!-- Profile Info -->
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl md:text-3xl font-semibold text-white break-all">_dheeraj_mourya</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7.42l-1.41-1.41-9.59 9.59-4.59-4.59-1.41 1.41 6 6z"/></svg>
+          </div>
+          <div class="flex gap-6 mb-3">
+            <div>
+              <span class="font-bold text-white">391</span>
+              <span class="text-gray-400">posts</span>
+            </div>
+            <div>
+              <span class="font-bold text-white">26.1K</span>
+              <span class="text-gray-400">followers</span>
+            </div>
+            <div>
+              <span class="font-bold text-white">1,652</span>
+              <span class="text-gray-400">following</span>
+            </div>
+          </div>
+          <div class="mb-1">
+            <span class="font-bold text-white">Dheeraj Mourya</span>
+            <span class="text-gray-400 ml-2">Reel creator</span>
+          </div>
+          <div class="text-gray-200 text-sm mb-1 flex items-center"><span class="mr-2">⚡</span>365 Days 365 Minivlog challenge</div>
+          <div class="text-gray-200 text-sm mb-1 flex items-center"><span class="mr-2">☑️</span>Join our journey to be the best</div>
+          <div class="text-gray-200 text-sm mb-1 flex items-center"><span class="mr-2">✉️</span>dheerajjhansi13@gmail.com</div>
+          <div class="text-gray-200 text-sm flex items-center"><span class="mr-2">🎓</span>IIT Roorkee'27</div>
+        </div>
+      </div>
+      <!-- YouTube Card -->
+      <div class="rounded-xl p-8 bg-gray-900 border border-gray-700 shadow-lg flex flex-col md:flex-row items-center animate-fade-in-up" style="animation-delay:0.2s;">
+        <!-- Profile + Platform Logo -->
+        <div class="relative w-32 h-32 flex-shrink-0 mx-auto md:mx-0 mb-6 md:mb-0 md:mr-8">
+          <img src="https://pplx-res.cloudinary.com/image/private/user_uploads/76619133/87dcb378-a9c4-4551-96a9-3d05f95136cb/youtube.jpg" alt="YouTube Profile" class="w-32 h-32 rounded-full border-4 border-gray-700 shadow-lg object-cover transition-transform duration-500 hover:scale-105">
+          <img src="youtube.png" alt="YouTube Logo" class="absolute -bottom-3 -right-3 w-12 h-12 rounded-full bg-white p-1 shadow-lg border-2 border-gray-900 animate-bounce">
+        </div>
+        <!-- Profile Info -->
+        <div class="flex-1 min-w-0">
+          <div class="text-2xl md:text-3xl font-semibold text-white mb-1 break-all">Dheeraj Mourya [IIT-R]</div>
+          <div class="text-gray-400 mb-3">@DheerajmouryaIITR</div>
+          <div class="flex gap-6 mb-3">
+            <div>
+              <span class="font-bold text-white">33.3K</span>
+              <span class="text-gray-400">subscribers</span>
+            </div>
+            <div>
+              <span class="font-bold text-white">742</span>
+              <span class="text-gray-400">videos</span>
+            </div>
+          </div>
+          <div class="text-gray-200 text-sm mb-2">Sapne Dekho Unke liye mehnat karo kyunki Sapne poore hote hai</div>
+          <div class="text-sm mb-4">
+            <a href="https://www.instagram.com/_dheeraj_mourya/" class="text-blue-400 hover:underline">instagram.com/_dheeraj_mourya</a>
+            <span class="text-gray-300 mx-2">and</span>
+            <span class="text-blue-400 cursor-pointer">1 more link</span>
+          </div>
+          <div class="flex gap-3">
+            <button class="flex items-center gap-2 bg-gray-600 text-white py-2 px-4 rounded-full text-sm hover:bg-gray-500 transition-colors"><span>🔔</span>Subscribed<span class="text-xs ml-1">▼</span></button>
+            <button class="bg-gray-900 text-blue-400 border border-blue-400 py-2 px-4 rounded-full text-sm hover:bg-blue-400 hover:text-gray-900 transition-all">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Stats Dashboard -->
+    <div class="bg-gradient-to-tr from-[#232526] to-[#414345] rounded-3xl py-12 px-4 md:px-12 shadow-2xl">
+      <h3 class="text-2xl md:text-3xl font-semibold text-center text-white mb-10 tracking-wide">Instagram Reel Insights</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Stat Card Example -->
+        <div class="bg-[#18191a] rounded-2xl p-6 shadow-lg flex flex-col items-center">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-purple-400 text-3xl"><i class="fas fa-chart-line"></i></span>
+            <span class="text-lg text-gray-200 font-semibold">2 Mar 2024</span>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4 mb-4">
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-white">1.1M</span>
+              <span class="text-xs text-gray-400">Views</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-pink-400">77K</span>
+              <span class="text-xs text-gray-400">Likes</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-yellow-400">527</span>
+              <span class="text-xs text-gray-400">Comments</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-blue-400">8.3K</span>
+              <span class="text-xs text-gray-400">Shares</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-green-400">10K</span>
+              <span class="text-xs text-gray-400">Saves</span>
+            </div>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Accounts Reached</span>
+            <span class="font-semibold text-white">589,187</span>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Interactions</span>
+            <span class="font-semibold text-white">96,337</span>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Profile Activity</span>
+            <span class="font-semibold text-white">874</span>
+          </div>
+          <div class="w-full mt-4">
+            <div class="flex items-center gap-2">
+              <span class="inline-block w-3 h-3 rounded-full bg-pink-500"></span>
+              <span class="text-xs text-gray-400">1.4% Followers</span>
+              <span class="inline-block w-3 h-3 rounded-full bg-purple-600"></span>
+              <span class="text-xs text-gray-400">98.6% Non-Followers</span>
+            </div>
+            <div class="w-full bg-gray-800 rounded-full h-2 mt-2">
+              <div class="bg-gradient-to-r from-pink-500 to-purple-600 h-2 rounded-full" style="width:98.6%"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Repeat Stat Card for each Reel (copy and update data as needed) -->
+        <div class="bg-[#18191a] rounded-2xl p-6 shadow-lg flex flex-col items-center">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-purple-400 text-3xl"><i class="fas fa-chart-line"></i></span>
+            <span class="text-lg text-gray-200 font-semibold">21 Apr 2024</span>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4 mb-4">
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-white">1.4M</span>
+              <span class="text-xs text-gray-400">Views</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-pink-400">157K</span>
+              <span class="text-xs text-gray-400">Likes</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-yellow-400">1.6K</span>
+              <span class="text-xs text-gray-400">Comments</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-blue-400">29K</span>
+              <span class="text-xs text-gray-400">Shares</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-green-400">11K</span>
+              <span class="text-xs text-gray-400">Saves</span>
+            </div>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Accounts Reached</span>
+            <span class="font-semibold text-white">916,901</span>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Interactions</span>
+            <span class="font-semibold text-white">198,479</span>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Profile Activity</span>
+            <span class="font-semibold text-white">4,150</span>
+          </div>
+          <div class="w-full mt-4">
+            <div class="flex items-center gap-2">
+              <span class="inline-block w-3 h-3 rounded-full bg-pink-500"></span>
+              <span class="text-xs text-gray-400">1.4% Followers</span>
+              <span class="inline-block w-3 h-3 rounded-full bg-purple-600"></span>
+              <span class="text-xs text-gray-400">98.6% Non-Followers</span>
+            </div>
+            <div class="w-full bg-gray-800 rounded-full h-2 mt-2">
+              <div class="bg-gradient-to-r from-pink-500 to-purple-600 h-2 rounded-full" style="width:98.6%"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Example for a high-performing reel -->
+        <div class="bg-[#18191a] rounded-2xl p-6 shadow-lg flex flex-col items-center">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="text-purple-400 text-3xl"><i class="fas fa-chart-line"></i></span>
+            <span class="text-lg text-gray-200 font-semibold">10 Apr 2024</span>
+          </div>
+          <div class="flex flex-wrap justify-center gap-4 mb-4">
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-white">6.8M</span>
+              <span class="text-xs text-gray-400">Views</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-pink-400">482K</span>
+              <span class="text-xs text-gray-400">Likes</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-yellow-400">4.1K</span>
+              <span class="text-xs text-gray-400">Comments</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-blue-400">421K</span>
+              <span class="text-xs text-gray-400">Shares</span>
+            </div>
+            <div class="flex flex-col items-center">
+              <span class="text-2xl font-bold text-green-400">26K</span>
+              <span class="text-xs text-gray-400">Saves</span>
+            </div>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Accounts Reached</span>
+            <span class="font-semibold text-white">4,334,337</span>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Interactions</span>
+            <span class="font-semibold text-white">932,980</span>
+          </div>
+          <div class="w-full flex justify-between text-sm text-gray-300 mb-2">
+            <span>Profile Activity</span>
+            <span class="font-semibold text-white">217</span>
+          </div>
+          <div class="w-full mt-4">
+            <div class="flex items-center gap-2">
+              <span class="inline-block w-3 h-3 rounded-full bg-pink-500"></span>
+              <span class="text-xs text-gray-400">0.3% Followers</span>
+              <span class="inline-block w-3 h-3 rounded-full bg-purple-600"></span>
+              <span class="text-xs text-gray-400">99.7% Non-Followers</span>
+            </div>
+            <div class="w-full bg-gray-800 rounded-full h-2 mt-2">
+              <div class="bg-gradient-to-r from-pink-500 to-purple-600 h-2 rounded-full" style="width:99.7%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-gray-400 text-sm mt-10">* Data shown from top performing Instagram Reels, 2024</p>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(40px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in-up {
+  animation: fade-in-up 1s cubic-bezier(.23,1.01,.32,1) both;
+}
+</style>
+
 
     <!-- What Makes Socialama Different Section -->
     <section class="py-32 bg-[#1a1a1a] text-center">
@@ -587,47 +825,42 @@
         </div>
     </section>
 
-    <!-- Contact/CTA Section -->
-    <section
-        class="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] overflow-hidden">
-        <div class="absolute inset-0 z-10"
-            style="background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);">
-        </div>
-        <div class="max-w-6xl mx-auto px-10 relative z-20 text-center py-16">
-            <h1 class="text-4xl md:text-6xl font-normal text-white mb-8 tracking-wider leading-tight">Ready to Go Viral
-                with Us?</h1>
-            <p class="text-lg text-gray-300 leading-relaxed mb-12 max-w-2xl mx-auto font-light">Stop guessing what
-                works. Start creating content that actually does. Whether you're a brand, a founder, or a creator —
-                let's build your digital presence like it was always meant to blow up.</p>
-            <div class="mb-12">
-                <h2
-                    class="text-3xl md:text-5xl font-semibold text-white tracking-[0.2em] uppercase gradient-text bg-gradient-to-r from-white to-gray-400">
-                    SOCiALAMA</h2>
-            </div>
-            <div class="space-y-6 max-w-sm mx-auto">
-                <div
-                    class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all">
-                    <div class="w-5 h-5 flex-shrink-0"><i class="fas fa-envelope text-lg text-red-400"></i></div><span
-                        class="text-base text-white tracking-wider">socialama@gmail.com</span>
-                </div>
-                <div
-                    class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all">
-                    <div class="w-5 h-5 flex-shrink-0"><i class="fas fa-globe text-lg text-teal-400"></i></div><span
-                        class="text-base text-white tracking-wider">socialama.in</span>
-                </div>
-                <div
-                    class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all">
-                    <div class="w-5 h-5 flex-shrink-0"><i class="fas fa-phone text-lg text-blue-400"></i></div><span
-                        class="text-base text-white tracking-wider">8707215896 [Dhruv]</span>
-                </div>
-                <div
-                    class="flex items-center gap-4 py-4 px-6 bg-white/10 rounded-full border border-white/10 hover:bg-white/20 hover:border-white/20 hover:-translate-y-1 transition-all">
-                    <div class="w-5 h-5 flex-shrink-0"><i class="fab fa-instagram text-lg text-pink-500"></i></div><span
-                        class="text-base text-white tracking-wider">@socialama_official</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Contact/CTA Section with Centered Collage and Content -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Collage as background -->
+  <div class="absolute inset-0 w-full h-full pointer-events-none">
+    <div class="logo-collage-wrapper w-full h-full">
+      <img src="images/1.jpg" class="collage-img img1" alt="" />
+      <img src="images/2.jpg" class="collage-img img2" alt="" />
+      <img src="images/3.jpg" class="collage-img img3" alt="" />
+      <img src="images/4.jpg" class="collage-img img4" alt="" />
+      <img src="images/5.jpg" class="collage-img img5" alt="" />
+      <img src="images/6.jpg" class="collage-img img6" alt="" />
+      <img src="images/7.jpg" class="collage-img img7" alt="" />
+    </div>
+    <!-- Overlay for readability -->
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+  <!-- Centered Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center w-full max-w-2xl px-4 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-5">Ready to Go Viral with Us?</h1>
+    <p class="text-base md:text-lg text-gray-200 mb-7 font-light max-w-xl">
+      Stop guessing what works. Start creating content that actually does. Whether you're a brand, a founder, or a creator.  Let's build your digital presence like it was always meant to blow up.
+    </p>
+    <img src="images/LOGO.png" alt="SOCiALAMA Logo" class="mx-auto mb-6" style="width: 200px;"/>
+    <div class="space-y-3 text-white text-base font-light mb-2">
+      <div><i class="fas fa-envelope text-red-400 mr-2"></i> socialama@gmail.com</div>
+      <div><i class="fas fa-globe text-teal-400 mr-2"></i> socialama.in</div>
+      <div><i class="fas fa-phone text-blue-400 mr-2"></i> 8707215896 [Dhruv]</div>
+      <div><i class="fab fa-instagram text-pink-500 mr-2"></i> @socialama_official</div>
+    </div>
+  </div>
+</section>
+
+
+        
+       
+
 </body>
 
 </html>
