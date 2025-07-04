@@ -121,7 +121,7 @@
 
 
 
-    
+
 
     <!-- Hero Section with 7-image collage background -->
     <style>
@@ -389,13 +389,16 @@
 
 
     <!-- Who Are We Section -->
-    <section class="min-h-screen flex items-center justify-center px-8 bg-[#1E1E1E]">
+    <section class="min-h-screen flex items-center justify-center px-8 bg-[#1E1E1E]" id="who-are-we-section">
         <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-6xl md:text-7xl font-thin tracking-[0.15em] mb-12 text-white leading-tight">Who Are We?</h2>
-            <h3 class="text-xl md:text-3xl font-light mb-16 text-white tracking-[0.08em]">We're Not Just a Team. We're a
+            <h2 class="text-7xl md:text-8xl font-thin tracking-[0.15em] mb-12 text-white leading-tight transition-all duration-700 ease-out"
+                id="who-title">Who Are We?</h2>
+            <h3 class="text-xl md:text-3xl font-light mb-16 text-white tracking-[0.08em] opacity-0" id="who-subtitle">
+                We're Not Just a Team. We're a
                 Content Culture.</h3>
             <div class="max-w-4xl mx-auto">
-                <p class="text-lg font-light leading-relaxed text-gray-300 tracking-[0.02em]">Socialama is a new-gen
+                <p class="text-lg font-light leading-relaxed text-gray-300 tracking-[0.02em] opacity-0 transition-opacity duration-1000 ease-out"
+                    id="who-paragraph">Socialama is a new-gen
                     content agency built by creators. We specialize in crafting scroll-stopping content that's not just
                     viral it's valuable. Our aim is to transform your online presence into a powerful brand asset. From
                     zero to hero, we build personal brands that actually connect.</p>
@@ -403,76 +406,292 @@
         </div>
     </section>
 
-    <!-- Quality Assurance Section -->
     <style>
-        /* Quality Section Background */
-        .new-quality-section {
-            background-image: url('images/quality-background.png');
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-            position: relative;
-            min-height: 100vh;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 100;
+        /* Who Are We Section Animations */
+        #who-subtitle {
+            transition: opacity 0.6s ease-out;
         }
 
-        .new-quality-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom,
-                    rgba(0, 0, 0, 0.2) 0%,
-                    rgba(0, 0, 0, 0.1) 30%,
-                    rgba(0, 0, 0, 0.3) 70%,
-                    rgba(26, 26, 26, 0.8) 100%);
-            z-index: 1;
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #fff;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
         }
 
-        .new-quality-section>div {
-            position: relative;
-            z-index: 2;
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #fff;
+            }
         }
     </style>
-    <section class="py-32 new-quality-section">
-        <div class="content-wrapper max-w-6xl mx-auto px-10 text-center">
-            <div>
-                <h3 class="text-3xl md:text-4xl font-light text-gray-200 tracking-wider quality-text-shadow">We Ensure
-                </h3>
-                <h1
-                    class="text-8xl md:text-9xl font-bold text-white tracking-widest leading-none mt-2 quality-text-shadow">
-                    Quality</h1>
-            </div>
-            <div class="mt-20 flex flex-col md:flex-row justify-between items-center w-full gap-12 md:gap-0 px-4">
-                <div class="flex-1 text-center animate-fade-in-up">
-                    <p
-                        class="text-8xl md:text-8xl font-extrabold bg-gradient-to-b from-red-700 via-red-700 via-50% to-black bg-clip-text text-transparent quality-text-shadow">
-                        50M<span class="text-white">+</span>
-                    </p>
-                    <p class="mt-2 text-lg text-white tracking-wider quality-text-shadow">Views Generated</p>
-                </div>
-                <div class="flex-1 text-center animate-fade-in-up" style="animation-delay: 0.2s;">
-                    <p
-                        class="text-7xl md:text-8xl font-extrabold bg-gradient-to-b from-red-700 via-red-700 via-50% to-black bg-clip-text text-transparent quality-text-shadow">
-                        1B<span class="text-white">+</span>
-                    </p>
-                    <p class="mt-2 text-lg text-white tracking-wider quality-text-shadow">Account Reached</p>
-                </div>
-                <div class="flex-1 text-center animate-fade-in-up" style="animation-delay: 0.4s;">
-                    <p
-                        class="text-7xl md:text-8xl font-extrabold bg-gradient-to-b from-red-700 via-red-700 via-50% to-black bg-clip-text text-transparent quality-text-shadow">
-                        1L<span class="text-white">+</span>
-                    </p>
-                    <p class="mt-2 text-lg text-white tracking-wider quality-text-shadow">Community</p>
-                </div>
-            </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const whoTitle = document.getElementById('who-title');
+            const whoSubtitle = document.getElementById('who-subtitle');
+            const whoParagraph = document.getElementById('who-paragraph');
+
+            let animationTriggered = false;
+
+            function updateWhoAnimation() {
+                const scrollY = window.pageYOffset;
+                const windowHeight = window.innerHeight;
+                const windowCenter = scrollY + (windowHeight / 2);
+
+                // Get title's position
+                const titleRect = whoTitle.getBoundingClientRect();
+                const titleCenter = scrollY + titleRect.top + (titleRect.height / 2);
+
+                // Check if title center is at window center
+                const titleAtCenter = Math.abs(windowCenter - titleCenter) < 50;
+
+                // Trigger animations when title hits center
+                if (titleAtCenter && !animationTriggered) {
+                    // Reduce title size
+                    whoTitle.classList.remove('text-7xl', 'md:text-8xl');
+                    whoTitle.classList.add('text-6xl', 'md:text-7xl');
+
+                    // Show and animate subtitle with typing
+                    whoSubtitle.style.opacity = '1';
+                    whoSubtitle.classList.add('typing-animation');
+
+                    // Show paragraph with fade after subtitle
+                    setTimeout(() => {
+                        whoParagraph.style.opacity = '1';
+
+                        // Remove typing border after subtitle animation completes
+                        setTimeout(() => {
+                            whoSubtitle.style.borderRight = 'none';
+                        }, 1500);
+
+                    }, 1500);
+
+                    animationTriggered = true;
+                }
+
+                // Reset when scrolled back up
+                else if (titleCenter > windowCenter + 200 && animationTriggered) {
+                    // Reset title size
+                    whoTitle.classList.remove('text-6xl', 'md:text-7xl');
+                    whoTitle.classList.add('text-7xl', 'md:text-8xl');
+
+                    whoSubtitle.style.opacity = '0';
+                    whoSubtitle.classList.remove('typing-animation');
+                    whoParagraph.style.opacity = '0';
+                    whoSubtitle.style.borderRight = '2px solid #fff';
+                    animationTriggered = false;
+                }
+            }
+
+            // Throttle scroll events
+            let ticking = false;
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateWhoAnimation);
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', function () {
+                ticking = false;
+                requestTick();
+            });
+
+            // Initial check
+            updateWhoAnimation();
+        });
+    </script>
+
+
+<!-- Quality Assurance Section -->
+<style>
+    /* Quality Section Background */
+    .new-quality-section {
+        background-image: url('images/quality-background.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        min-height: 100vh;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 100;
+    }
+
+    .new-quality-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.1) 30%,
+                rgba(0, 0, 0, 0.3) 70%,
+                rgba(26, 26, 26, 0.8) 100%);
+        z-index: 1;
+    }
+
+    .new-quality-section > div {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Q Letter Animation */
+    .quality-title {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .q-letter {
+        display: inline-block;
+        transform: translateX(-140vw); /* Start further left to ensure it starts at left border */
+        transition: none;
+    }
+</style>
+
+<section class="py-32 new-quality-section" id="quality-section">
+    <div class="content-wrapper max-w-6xl mx-auto px-10 text-center">
+        <div>
+            <h3 class="text-3xl md:text-4xl font-light text-gray-200 tracking-wider quality-text-shadow">We Ensure</h3>
+            <h1 class="text-8xl md:text-9xl font-bold text-white tracking-widest leading-none mt-2 quality-text-shadow quality-title">
+                <span class="q-letter" id="q-letter">Q</span>uality
+            </h1>
         </div>
-    </section>
+        <div class="mt-20 flex flex-col md:flex-row justify-between items-center w-full gap-12 md:gap-0 px-4">
+            <div class="flex-1 text-center animate-fade-in-up">
+                <p class="text-6xl md:text-7xl font-extrabold bg-gradient-to-b from-red-700 via-red-700 via-50% to-black bg-clip-text text-transparent quality-text-shadow">
+                    <span class="count-value" data-target="500">0</span>K<span class="text-white">+</span>
+                </p>
+                <p class="mt-2 text-lg text-white tracking-wider quality-text-shadow">Views Generated</p>
+            </div>
+            <div class="flex-1 text-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                <p class="text-6xl md:text-7xl font-extrabold bg-gradient-to-b from-red-700 via-red-700 via-50% to-black bg-clip-text text-transparent quality-text-shadow">
+                    <span class="count-value" data-target="100">0</span>M<span class="text-white">+</span>
+                </p>
+                <p class="mt-2 text-lg text-white tracking-wider quality-text-shadow">Account Reached</p>
+            </div>
+            <div class="flex-1 text-center animate-fade-in-up" style="animation-delay: 0.4s;">
+                <p class="text-6xl md:text-7xl font-extrabold bg-gradient-to-b from-red-700 via-red-700 via-50% to-black bg-clip-text text-transparent quality-text-shadow">
+                    <span class="count-value" data-target="100">0</span>K<span class="text-white">+</span>
+                </p>
+                <p class="mt-2 text-lg text-white tracking-wider quality-text-shadow">Community</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const qualitySection = document.getElementById('quality-section');
+    const qLetter = document.getElementById('q-letter');
+    const countValues = document.querySelectorAll('.count-value');
+    
+    let counterAnimationTriggered = false;
+    
+    function animateCounterWithEaseOut(element, target, duration = 2000) {
+        const startTime = Date.now();
+        
+        function updateCounter() {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Smooth ease-out curve for nice ending animation
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            
+            const currentValue = Math.floor(target * easeOut);
+            element.textContent = currentValue;
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target;
+            }
+        }
+        
+        updateCounter();
+    }
+    
+    function updateQualityAnimations() {
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const sectionTop = qualitySection.offsetTop;
+        const sectionHeight = qualitySection.offsetHeight;
+        
+        // Check if section is in viewport - trigger much earlier when section first appears
+        const sectionInView = scrollY + windowHeight > sectionTop - windowHeight * 0.8 && scrollY < sectionTop + sectionHeight;
+        
+        if (sectionInView) {
+            // Calculate progress starting much earlier when section appears
+            const sectionProgress = Math.max(0, Math.min(1, (scrollY + windowHeight - sectionTop + windowHeight * 0.8) / (sectionHeight + windowHeight * 1.8)));
+            
+            // Q letter movement - starts much earlier and moves faster
+            const qProgress = Math.max(0, Math.min(1, sectionProgress * 1.5)); // Much faster movement
+            const qTranslateX = -140 + (qProgress * 140); // From -120vw to 0vw (starts at left border)
+            qLetter.style.transform = `translateX(${qTranslateX}vw)`;
+            
+            // Animate counters much earlier when section first appears
+            if (sectionProgress > 0.02 && !counterAnimationTriggered) {
+                countValues.forEach((countValue, index) => {
+                    setTimeout(() => {
+                        const target = parseInt(countValue.getAttribute('data-target'));
+                        animateCounterWithEaseOut(countValue, target, 2500);
+                    }, index * 200);
+                });
+                counterAnimationTriggered = true;
+            }
+        }
+        
+        // Reset animations when scrolled back up
+        else if (scrollY < sectionTop - windowHeight) {
+            if (counterAnimationTriggered) {
+                qLetter.style.transform = 'translateX(-120vw)';
+                countValues.forEach(countValue => {
+                    countValue.textContent = '0';
+                });
+                counterAnimationTriggered = false;
+            }
+        }
+    }
+    
+    // Throttle scroll events
+    let ticking = false;
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateQualityAnimations);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', function() {
+        ticking = false;
+        requestTick();
+    });
+    
+    // Initial check
+    updateQualityAnimations();
+});
+</script>
+
+
+    
     <!-- Our Services Section -->
     <style>
         .instagram-gradient {
