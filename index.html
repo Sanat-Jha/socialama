@@ -1019,74 +1019,87 @@
         background: linear-gradient(135deg, #ffd93d, #ff6b6b);
     }
 
+    /* Floating Particles */
+    .floating-particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    .particle-1 { top: 15%; left: 10%; animation: float-1 6s infinite ease-in-out; }
+    .particle-2 { top: 60%; right: 15%; animation: float-2 8s infinite ease-in-out; }
+    .particle-3 { bottom: 25%; left: 20%; animation: float-3 7s infinite ease-in-out; }
+
+    /* Keyframe Animations */
+    @keyframes float-1 {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+        50% { transform: translateY(-15px) translateX(8px); opacity: 0.8; }
+    }
+
+    @keyframes float-2 {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+        50% { transform: translateY(12px) translateX(-12px); opacity: 0.8; }
+    }
+
+    @keyframes float-3 {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.5; }
+        50% { transform: translateY(-8px) translateX(15px); opacity: 0.8; }
+    }
+
     /* Enhanced entering animations */
-    @keyframes titleMegaEntrance {
+    @keyframes titleSlideIn {
         0% {
             opacity: 0;
-            transform: perspective(1000px) translateX(400px) translateZ(-200px) rotateY(-45deg) scale(0.5);
-            filter: blur(20px);
-        }
-        50% {
-            opacity: 0.7;
-            transform: perspective(1000px) translateX(100px) translateZ(-50px) rotateY(-15deg) scale(0.8);
-            filter: blur(8px);
+            transform: translateX(100px) scale(0.8);
         }
         100% {
             opacity: 1;
-            transform: perspective(1000px) translateX(0) translateZ(0) rotateY(0deg) scale(1);
-            filter: blur(0px);
+            transform: translateX(0) scale(1);
         }
     }
 
-    @keyframes lineMegaSlide {
+    @keyframes lineExpand {
         0% {
             opacity: 0;
-            transform: translateX(300px) scaleX(0);
-            filter: blur(10px);
-        }
-        60% {
-            opacity: 0.8;
-            transform: translateX(-20px) scaleX(1.1);
-            filter: blur(2px);
+            transform: scaleX(0);
         }
         100% {
             opacity: 1;
-            transform: translateX(0) scaleX(1);
-            filter: blur(0px);
+            transform: scaleX(1);
         }
     }
 
-    @keyframes cardMegaEntrance {
+    @keyframes cardSlideUp {
         0% {
             opacity: 0;
-            transform: perspective(800px) translateX(150px) translateY(50px) translateZ(-100px) rotateY(-30deg) rotateX(20deg) scale(0.6);
-            filter: blur(15px) brightness(0.5);
-        }
-        30% {
-            opacity: 0.5;
-            transform: perspective(800px) translateX(50px) translateY(20px) translateZ(-40px) rotateY(-10deg) rotateX(8deg) scale(0.85);
-            filter: blur(8px) brightness(0.8);
-        }
-        70% {
-            opacity: 0.9;
-            transform: perspective(800px) translateX(-10px) translateY(-5px) translateZ(10px) rotateY(3deg) rotateX(-2deg) scale(1.05);
-            filter: blur(2px) brightness(1.1);
+            transform: translateY(60px) scale(0.9);
         }
         100% {
             opacity: 1;
-            transform: perspective(800px) translateX(0) translateY(0) translateZ(0) rotateY(0deg) rotateX(0deg) scale(1);
-            filter: blur(0px) brightness(1);
+            transform: translateY(0) scale(1);
         }
     }
 
-    @keyframes textSlideUp {
+    @keyframes textFadeIn {
         0% {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
         }
         100% {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    @keyframes iconGlow {
+        0%, 100% {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        50% {
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
         }
     }
 
@@ -1098,69 +1111,63 @@
     }
 
     .services-title {
-        transform: perspective(1000px) translateX(400px) translateZ(-200px) rotateY(-45deg) scale(0.5);
-        filter: blur(20px);
+        transform: translateX(100px) scale(0.8);
     }
 
     .services-line {
-        transform: translateX(300px) scaleX(0);
-        filter: blur(10px);
+        transform: scaleX(0);
     }
 
     .service-card {
-        transform: perspective(800px) translateX(150px) translateY(50px) translateZ(-100px) rotateY(-30deg) rotateX(20deg) scale(0.6);
-        filter: blur(15px) brightness(0.5);
+        transform: translateY(60px) scale(0.9);
     }
 
     .service-card h3,
     .service-card p,
     .service-card .inline-block {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 
     /* Animation classes */
     .services-title.animate {
-        animation: titleMegaEntrance 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        animation: titleSlideIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
 
     .services-line.animate {
-        animation: lineMegaSlide 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+        animation: lineExpand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
     }
 
     .service-card.animate {
-        animation: cardMegaEntrance 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        animation: cardSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
     }
 
     .service-card.animate .inline-block {
-        animation: textSlideUp 0.6s ease-out 0.5s forwards;
+        animation: textFadeIn 0.6s ease-out 0.3s forwards;
     }
 
     .service-card.animate h3 {
-        animation: textSlideUp 0.6s ease-out 0.7s forwards;
+        animation: textFadeIn 0.6s ease-out 0.5s forwards;
     }
 
     .service-card.animate p {
-        animation: textSlideUp 0.6s ease-out 0.9s forwards;
+        animation: textFadeIn 0.6s ease-out 0.7s forwards;
     }
 
     /* Final animated state */
     .services-title.animated {
         opacity: 1;
-        transform: perspective(1000px) translateX(0) translateZ(0) rotateY(0deg) scale(1);
-        filter: blur(0px);
+        transform: translateX(0) scale(1);
     }
 
     .services-line.animated {
         opacity: 1;
-        transform: translateX(0) scaleX(1);
-        filter: blur(0px);
+        transform: scaleX(1);
     }
 
     .service-card.animated {
         opacity: 1;
-        transform: perspective(800px) translateX(0) translateY(0) translateZ(0) rotateY(0deg) rotateX(0deg) scale(1);
-        filter: blur(0px) brightness(1);
+        transform: translateY(0) scale(1);
     }
 
     .service-card.animated h3,
@@ -1170,50 +1177,89 @@
         transform: translateY(0);
     }
 
-    /* Enhanced hover effects */
+    /* Subtle hover effects */
     .service-card {
         transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
     }
 
     .service-card.animated:hover {
-        transform: perspective(800px) translateY(-15px) translateZ(30px) rotateX(5deg) scale(1.03);
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(255, 255, 255, 0.3);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.1);
+        transform: translateY(-8px) scale(1.02);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+
+    .service-card.animated:hover .w-16 {
+        animation: iconGlow 2s ease-in-out infinite;
+        transform: scale(1.1);
+        transition: all 0.3s ease;
     }
 
     .service-card.animated:hover h3 {
         transform: translateY(-2px);
         transition: all 0.3s ease;
-        text-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        font-weight: 700;
     }
 
     .service-card.animated:hover .inline-block {
         transform: translateY(-2px) scale(1.05);
         transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card.animated:hover p {
+        color: #e5e5e5;
+        transition: all 0.3s ease;
+    }
+
+    /* Background gradient on hover */
+    .service-card.animated:hover:nth-child(1) {
+        background: radial-gradient(circle at center, rgba(240, 148, 51, 0.1), rgba(188, 24, 136, 0.1));
+    }
+
+    .service-card.animated:hover:nth-child(2) {
+        background: radial-gradient(circle at center, rgba(255, 0, 0, 0.1), rgba(204, 0, 0, 0.1));
+    }
+
+    .service-card.animated:hover:nth-child(3) {
+        background: radial-gradient(circle at center, rgba(66, 103, 178, 0.1), rgba(37, 211, 102, 0.1));
+    }
+
+    .service-card.animated:hover:nth-child(4) {
+        background: radial-gradient(circle at center, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+    }
+
+    .service-card.animated:hover:nth-child(5) {
+        background: radial-gradient(circle at center, rgba(168, 230, 207, 0.1), rgba(127, 205, 205, 0.1));
+    }
+
+    .service-card.animated:hover:nth-child(6) {
+        background: radial-gradient(circle at center, rgba(255, 217, 61, 0.1), rgba(255, 107, 107, 0.1));
     }
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
         .services-title {
-            transform: perspective(600px) translateX(200px) translateZ(-100px) rotateY(-30deg) scale(0.6);
+            transform: translateX(60px) scale(0.9);
         }
 
         .services-title.animated {
-            transform: perspective(600px) translateX(0) translateZ(0) rotateY(0deg) scale(1);
+            transform: translateX(0) scale(1);
         }
 
         .service-card {
-            transform: perspective(500px) translateX(100px) translateY(30px) translateZ(-60px) rotateY(-20deg) rotateX(15deg) scale(0.7);
+            transform: translateY(40px) scale(0.95);
         }
 
         .service-card.animated {
-            transform: perspective(500px) translateX(0) translateY(0) translateZ(0) rotateY(0deg) rotateX(0deg) scale(1);
+            transform: translateY(0) scale(1);
         }
 
         .service-card.animated:hover {
-            transform: perspective(500px) translateY(-10px) translateZ(20px) rotateX(3deg) scale(1.02);
+            transform: translateY(-6px) scale(1.01);
         }
     }
 
@@ -1243,6 +1289,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             <!-- Service Cards -->
             <div class="service-card bg-white bg-opacity-5 rounded-2xl p-6 md:p-8 border border-white/10 backdrop-blur-sm">
+                <!-- Floating Particles -->
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="floating-particle particle-1"></div>
+                    <div class="floating-particle particle-2"></div>
+                    <div class="floating-particle particle-3"></div>
+                </div>
+                
                 <div class="flex justify-center items-center mb-6">
                     <div class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white instagram-gradient">
                         <img src="images/insta.png" alt="Instagram" class="service-icon-img" />
@@ -1258,6 +1311,13 @@
             </div>
 
             <div class="service-card bg-white bg-opacity-5 rounded-2xl p-6 md:p-8 border border-white/10 backdrop-blur-sm">
+                <!-- Floating Particles -->
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="floating-particle particle-1"></div>
+                    <div class="floating-particle particle-2"></div>
+                    <div class="floating-particle particle-3"></div>
+                </div>
+                
                 <div class="flex justify-center items-center mb-6">
                     <div class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white youtube-gradient">
                         <img src="images/youtube2.png" alt="YouTube" class="service-icon-img" />
@@ -1273,6 +1333,13 @@
             </div>
 
             <div class="service-card bg-white bg-opacity-5 rounded-2xl p-6 md:p-8 border border-white/10 backdrop-blur-sm">
+                <!-- Floating Particles -->
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="floating-particle particle-1"></div>
+                    <div class="floating-particle particle-2"></div>
+                    <div class="floating-particle particle-3"></div>
+                </div>
+                
                 <div class="flex justify-center items-center mb-6">
                     <div class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white multi-platform-gradient">
                         <img src="images/socials.png" alt="Multi-Platform" class="service-icon-img" />
@@ -1288,6 +1355,13 @@
             </div>
 
             <div class="service-card bg-white bg-opacity-5 rounded-2xl p-6 md:p-8 border border-white/10 backdrop-blur-sm">
+                <!-- Floating Particles -->
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="floating-particle particle-1"></div>
+                    <div class="floating-particle particle-2"></div>
+                    <div class="floating-particle particle-3"></div>
+                </div>
+                
                 <div class="flex justify-center items-center mb-6">
                     <div class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white design-gradient">
                         <i class="fas fa-palette"></i>
@@ -1303,6 +1377,13 @@
             </div>
 
             <div class="service-card bg-white bg-opacity-5 rounded-2xl p-6 md:p-8 border border-white/10 backdrop-blur-sm">
+                <!-- Floating Particles -->
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="floating-particle particle-1"></div>
+                    <div class="floating-particle particle-2"></div>
+                    <div class="floating-particle particle-3"></div>
+                </div>
+                
                 <div class="flex justify-center items-center mb-6">
                     <div class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white content-gradient">
                         <i class="fas fa-edit"></i>
@@ -1318,6 +1399,13 @@
             </div>
 
             <div class="service-card bg-white bg-opacity-5 rounded-2xl p-6 md:p-8 border border-white/10 backdrop-blur-sm">
+                <!-- Floating Particles -->
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="floating-particle particle-1"></div>
+                    <div class="floating-particle particle-2"></div>
+                    <div class="floating-particle particle-3"></div>
+                </div>
+                
                 <div class="flex justify-center items-center mb-6">
                     <div class="w-16 h-16 rounded-xl flex items-center justify-center text-2xl text-white consultation-gradient">
                         <img src="images/dheeraj.png" alt="Consultation" class="service-icon-img rounded-lg" />
@@ -1360,7 +1448,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
             setTimeout(() => {
                 title.classList.remove('animate');
                 title.classList.add('animated');
-            }, 1500);
+            }, 1000);
 
             // Animate line
             setTimeout(() => {
@@ -1368,8 +1456,8 @@ const sectionObserver = new IntersectionObserver((entries) => {
                 setTimeout(() => {
                     line.classList.remove('animate');
                     line.classList.add('animated');
-                }, 1200);
-            }, 500);
+                }, 800);
+            }, 300);
 
             // Animate cards with staggered timing
             cards.forEach((card, index) => {
@@ -1378,8 +1466,8 @@ const sectionObserver = new IntersectionObserver((entries) => {
                     setTimeout(() => {
                         card.classList.remove('animate');
                         card.classList.add('animated');
-                    }, 1200);
-                }, 800 + (index * 150));
+                    }, 800);
+                }, 600 + (index * 100));
             });
         }
     });
